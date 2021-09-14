@@ -40,7 +40,7 @@ class Sejarah extends BaseController
 			'list_slide' => $this->admin->getberita("where kategori='Sejarah' AND tanggal <= NOW() AND slide='1' order by tanggal DESC limit 3 "),
 			'kategori_name' => 'sejarah',
 		);
-		return view('sejarah', $data);
+		return view('viewdata', $data);
 	}
 
 	public function detail($slug)

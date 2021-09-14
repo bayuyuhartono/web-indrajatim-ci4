@@ -41,6 +41,16 @@
                       </select>
                     </div>
                   </div>
+                  <div class="col-md-4">               
+                    <div class="form-group">                      
+											<label>Tag</label>                      
+											<select name="tag[]" class="form-control select2" multiple="multiple">                        
+												<?php foreach ($list_tag as $data) { ?>                          
+													<option value="<?= $data['nama_tag'];?>" <?= in_array($data['nama_tag'], $tag) ? 'selected = "selected"' : '' ?>><?= $data['nama_tag'];?></option>                        
+												<?php } ?>                      
+											</select>                    
+										</div>
+                  </div> 
                   <div class="col-md-4">
                     <div class="form-group">
                       <label>Caption</label>

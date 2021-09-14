@@ -38,9 +38,9 @@ class Infoterkini extends BaseController
 			'img_socmedlima' => (isset($socmed_lima[0]['gambar'])) ? $socmed_lima[0]['gambar'] : "",
 			'list_infoterkini' => $this->admin->getberita("where kategori='Info Terkini' AND tanggal <= NOW() order by tanggal DESC limit 12 "),
 			'list_slide' => $this->admin->getberita("where kategori='Info Terkini' AND tanggal <= NOW() AND slide='1' order by tanggal DESC limit 3 "),
-			'kategori_name' => 'infoterkini',
+			'kategori_name' => 'info terkini',
 		);
-		return view('infoterkini', $data);
+		return view('viewdata', $data);
 	}
 
 	public function detail($slug)

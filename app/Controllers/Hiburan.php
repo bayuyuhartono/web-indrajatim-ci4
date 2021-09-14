@@ -40,7 +40,7 @@ class Hiburan extends BaseController
 			'list_slide' => $this->admin->getberita("where kategori='Hiburan' AND tanggal <= NOW() AND slide='1' order by tanggal DESC limit 3 "),
 			'kategori_name' => 'hiburan',
 		);
-		return view('hiburan', $data);
+		return view('viewdata', $data);
 	}
 
 	public function detail($slug)

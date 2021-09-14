@@ -12,9 +12,8 @@ class Pencarian extends BaseController
         $this->global = new m_global();
 	}
 
-	public function index()
+	public function search($searchvalue = '')
 	{
-		$searchvalue = $this->request->getPost('searchvalue');
 		$contact = $this->admin->getcontact("where id='1' ");
 		$socmed = $this->admin->getsocmed("where id='1' ");
 		$socmed_dua = $this->admin->getsocmed("where id='2' ");
@@ -37,11 +36,11 @@ class Pencarian extends BaseController
 			'img_socmedtiga' => (isset($socmed_tiga[0]['gambar'])) ? $socmed_tiga[0]['gambar'] : "",
 			'img_socmedempat' => (isset($socmed_empat[0]['gambar'])) ? $socmed_empat[0]['gambar'] : "",
 			'img_socmedlima' => (isset($socmed_lima[0]['gambar'])) ? $socmed_lima[0]['gambar'] : "",
-			'list_search' => $this->admin->getberita("where judul LIKE '%$searchvalue%' AND tanggal <= NOW() order by tanggal DESC limit 12 "),
-			'list_slide' => $this->admin->getberita("where tanggal <= NOW() AND slide='1' order by tanggal DESC limit 3 "),
+			'list_slide' => [],
 			'kategori_name' => 'berita',
+			'searchvalue' => $searchvalue,
 		);
-		return view('pencarian', $data);
+		return view('viewdata_pencarian', $data);
 	}
 
 	public function detail($id)

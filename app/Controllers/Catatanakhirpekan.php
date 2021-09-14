@@ -38,9 +38,9 @@ class Catatanakhirpekan extends BaseController
 			'img_socmedlima' => (isset($socmed_lima[0]['gambar'])) ? $socmed_lima[0]['gambar'] : "",
 			'list_catatanakhirpekan' => $this->admin->getberita("where kategori='Catatan Akhir Pekan' AND tanggal <= NOW() order by tanggal DESC limit 12 "),
 			'list_slide' => $this->admin->getberita("where kategori='Catatan Akhir Pekan' AND tanggal <= NOW() AND slide='1' order by tanggal DESC limit 3 "),
-			'kategori_name' => 'catatanakhirpekan',
+			'kategori_name' => 'catatan akhir pekan',
 		);
-		return view('catatanakhirpekan', $data);
+		return view('viewdata', $data);
 	}
 
 	public function detail($slug)

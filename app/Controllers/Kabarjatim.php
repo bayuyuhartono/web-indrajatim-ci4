@@ -39,9 +39,9 @@ class Kabarjatim extends BaseController
 			'img_socmedlima' => (isset($socmed_lima[0]['gambar'])) ? $socmed_lima[0]['gambar'] : "",
 			'list_kabarjatim' => $this->admin->getberita("where kategori='Kabar Jatim' AND tanggal <= NOW() order by tanggal DESC limit 12 "),
 			'list_slide' => $this->admin->getberita("where kategori='Kabar Jatim' AND tanggal <= NOW() AND slide='1' order by tanggal DESC limit 3 "),
-			'kategori_name' => 'kabarjatim',
+			'kategori_name' => 'kabar jatim',
 		);
-		return view('kabarjatim', $data);
+		return view('viewdata', $data);
 	}
 
 	public function detail($slug)

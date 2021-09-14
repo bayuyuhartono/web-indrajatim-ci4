@@ -41,7 +41,7 @@ class Tokoh extends BaseController
 			'list_slide' => $this->admin->getberita("where kategori='Tokoh' AND tanggal <= NOW() AND slide='1' order by tanggal DESC limit 3 "),
 			'kategori_name' => 'tokoh',
 		);
-		return view('tokoh', $data);
+		return view('viewdata', $data);
 	}
 
 	public function detail($slug)

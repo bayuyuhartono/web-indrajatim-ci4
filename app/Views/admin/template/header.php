@@ -78,6 +78,7 @@
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="<?= base_url('admin/kategori');?>">Kategori</a></li>
                 <li><a class="nav-link" href="<?= base_url('admin/berita');?>">Berita</a></li>
+                <li><a class="nav-link" href="<?= base_url('admin/tag');?>">Tag</a></li>
               </ul>
             </li>
             <li class="dropdown">

@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title><?= isset($judul_berita) ? $judul_berita : 'Berita Terkini Jawa Timur';?> - indrajatim.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="INDRA JATIM" />
-    <meta name="description" content="">
+    <meta name="description" content="<?= isset($caption) ? $caption : 'INDRAJATIM.com adalah perusahaan media dan berita jawa timur';?>">
+    <meta name="keyword" content="<?= isset($tag) ? $tag : 'Berita Terkini, Berita Jatim, Berita Politik, Berita Terbaru, Berita Hari Ini';?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?= $title;?></title>
+
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="<?= $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>">
+    <meta property="og:title" content="<?= isset($judul_berita) ? $judul_berita : 'Berita Terkini Jawa Timur';?> - indrajatim.com">
+    <meta property="og:description" content="<?= isset($caption) ? $caption : 'INDRAJATIM.com adalah perusahaan media dan berita jawa timur';?>">
+    <meta property="og:image" content="<?= isset($gambar_berita) ? base_url('assets/admin/upload/berita/'.$gambar_berita) : base_url('assets/other/newsimage.png');?>">
+    <meta property="og:image:secure_url" content="<?= isset($gambar_berita) ? base_url('assets/admin/upload/berita/'.$gambar_berita) : base_url('assets/other/newsimage.png');?>">
+    <meta name="twitter:title" content="<?= isset($judul_berita) ? $judul_berita : 'Berita Terkini Jawa Timur';?> - indrajatim.com">
+    <meta name="twitter:description" content="<?= isset($caption) ? $caption : 'INDRAJATIM.com adalah perusahaan media dan berita jawa timur';?>">
+    <meta name="twitter:image" content="<?= isset($gambar_berita) ? base_url('assets/admin/upload/berita/'.$gambar_berita) : base_url('assets/other/newsimage.png');?>">
+
     <link href="<?= base_url('assets/temp/css/plugins.css');?>" rel="stylesheet">
     <link href="<?= base_url('assets/temp/css/style.css');?>" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 <style type="text/css">
     .struktur_new {
@@ -119,6 +134,7 @@
         box-shadow: inset 0 1px 1px rgb(222, 222, 222), 0 0 8px rgb(222, 222, 222);
         outline: 0 none;
     }
+
 </style>
 <body>
     <div class="body-inner">
@@ -138,9 +154,9 @@
                             <nav>
                                 <ul>
                                     <li>
-                                        <form id="demo-2" method="post" action="<?= base_url('pencarian');?>">
-                                            <input type="search" class="search-form" name="searchvalue" autocomplete="off" placeholder="Search">
-                                        </form>
+                                        <div id="demo-2" method="post" action="<?= base_url('pencarian');?>">
+                                            <input type="search" class="search-form searchhead" name="searchvalue" autocomplete="off" placeholder="Search">
+                                        </div>
                                     </li>
                                     <li><a href="<?= base_url('infoterkini');?>">Info Terkini</a></li>
                                     <li><a href="<?= base_url('kabarjatim');?>">Kabar Jatim</a></li>
@@ -228,4 +244,20 @@
               $('.searchbox-icon').css('display', 'block');
           }
       }
+
+      $('.searchhead').keypress(function (e) {
+            if (e.which == 13) {
+                getsearch()
+                return false;
+            }
+        });
+
+        function getsearch() {
+            let searchhead = $(".searchhead").val();
+            if (searchhead.trim() == '') {
+
+            } else {
+                window.location.href = '<?php base_url() ?>/pencarian/' + searchhead;
+            }
+        }
     </script>

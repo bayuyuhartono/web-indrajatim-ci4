@@ -80,7 +80,7 @@
 </footer>
 </div>
 <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script src="<?= base_url('assets/temp/js/jquery.js');?>"></script>
 <script src="<?= base_url('assets/temp/js/plugins.js');?>"></script>
 <script src="<?= base_url('assets/temp/js/functions.js');?>"></script>
@@ -117,6 +117,10 @@
 	    return false;
 	    return true;
    	}
+
+	const listViewButton = document.querySelector('.list-view-button');
+	const gridViewButton = document.querySelector('.grid-view-button');
+	const list = document.querySelector('ol');
 </script>
 </body>
 </html>

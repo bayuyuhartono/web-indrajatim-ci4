@@ -18,6 +18,12 @@ class M_admin extends Model
 		 return $query->getResultArray();
 	}
 
+	public function gettag($where = '')
+	{
+		$query = $this->db->query("select * from tbl_tag $where;");
+		 return $query->getResultArray();
+	}
+
 	public function getcontact($where = '')
 	{
 		$query = $this->db->query("select * from tbl_contact $where;");
@@ -119,5 +125,12 @@ class M_admin extends Model
 	{
 		$query = $this->db->query("select * from tbl_admin $where;");
 		return $query->getResultArray();
+	}
+
+	public function getberitamore($where = '')
+	{
+		$query = $this->db->query("select id_berita, judul, slug, gambar, tanggal from tbl_berita left join tbl_kategori ON tbl_berita.id_kategori=tbl_kategori.id	
+		 $where;");
+		 return $query->getResultArray();
 	}
 }		

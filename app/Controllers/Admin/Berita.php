@@ -30,7 +30,8 @@ class Berita extends AdminBaseController
 		$data = array(
 			'title' => 'INDRA JATIM',
 			'subtitle' => 'Tambah Berita',
-			'list_kategori' => $this->admin->getkategori()
+			'list_kategori' => $this->admin->getkategori(),
+			'list_tag' => $this->admin->gettag(),
 		);
 		return view('admin/berita/tambah_data', $data);
 	}
@@ -42,45 +43,43 @@ class Berita extends AdminBaseController
 		$old_name	= $_FILES["gambar"]["name"];
 		$ext 		= pathinfo($old_name, PATHINFO_EXTENSION);
 		$new_name	= time().'.'.$ext;
-		// $config = array(
-		// 	'upload_path' 		=> './assets/admin/upload/berita/',
-		// 	'allowed_types' 	=> 'jpg|png|jpeg',
-		// 	'file_name'			=> $new_name,
-		// 	'image_library'		=> 'gd2',
-		// 	'source_image'		=> './assets/admin/upload/berita/'.$new_name,
-		// 	'create_thumb'		=> true,
-		// 	'maintain_ratio'	=> true,
-		// 	'thumb_marker'     	=> '',	
-		// );
-		// $this->load->library('upload', $config);
-		// if (! $this->upload->do_upload('gambar')) {
 
-		// }else{
-			// $upload_data         = array('uploads' => $this->upload->data());
-			// $this->load->library('image_lib', $config);
-			// $this->image_lib->resize();
-			$dataBerkas = $this->request->getFile('gambar');
-			$dataBerkas->move('assets/admin/upload/berita/', $new_name);
-			$data = array(
-				'judul'  			=> $this->request->getPost('judul'),
-				'slug'  			=> $this->request->getPost('slug'),
-				'id_kategori'  		=> $this->request->getPost('kategori'),
-				'tanggal'   		=> date($this->request->getPost('tanggal')).' '.$jam, 
-				'tanggal_dibuat'   	=> date('Y-m-d H:i:s').' '.$jam, 
-				'content'   		=> $this->request->getPost('content'),
-				'caption'   		=> $this->request->getPost('caption'),
-				'slide'   		=> $this->request->getPost('slide'),
-				'gambar'   			=> $new_name,
-			);
-			$this->global->InsertData('tbl_berita', $data);
-			session()->setFlashdata('success', 'Data Berhasil di Simpan');
-			return redirect()->back();
-		// }
+		$tag = '';
+		$tagarr = $this->request->getPost('tag');
+		foreach ($tagarr as $key => $value) {
+			if ($key != 0) {
+				$tag .= ',';
+			}
+			$tag .= $value;
+		}
+		
+		$dataBerkas = $this->request->getFile('gambar');
+		$dataBerkas->move('assets/admin/upload/berita/', $new_name);
+		$data = array(
+			'judul'  			=> $this->request->getPost('judul'),
+			'slug'  			=> $this->request->getPost('slug'),
+			'id_kategori'  		=> $this->request->getPost('kategori'),
+			'tanggal'   		=> date($this->request->getPost('tanggal')).' '.$jam, 
+			'tanggal_dibuat'   	=> date('Y-m-d H:i:s').' '.$jam, 
+			'content'   		=> $this->request->getPost('content'),
+			'caption'   		=> $this->request->getPost('caption'),
+			'slide'   		=> $this->request->getPost('slide'),
+			'gambar'   			=> $new_name,
+			'tag'				=> $tag,
+		);
+		$this->global->InsertData('tbl_berita', $data);
+		session()->setFlashdata('success', 'Data Berhasil di Simpan');
+		return redirect()->back();
 	}
 
 	public function edit_data($id_berita = '')
 	{
 		$berita = $this->admin->getberita("where id_berita='$id_berita' ");
+		if (isset($berita[0]['tag'])) {
+			$tag = explode(",",$berita[0]['tag']);
+		} else {
+			$tag = [];
+		}
 		$data = array(
 			'title' => 'INDRA JATIM',
 			'subtitle' => 'Edit Berita',
@@ -92,8 +91,10 @@ class Berita extends AdminBaseController
 			'tanggal_diubah' => date('Y-m-d H:i:s'),
 			'content' => (isset($berita[0]['content'])) ? $berita[0]['content'] : "",
 			'caption' => (isset($berita[0]['caption'])) ? $berita[0]['caption'] : "",
+			'tag' => $tag,
 			'slide' => (isset($berita[0]['slide'])) ? $berita[0]['slide'] : "0",
-			'list_kategori' => $this->admin->getkategori()
+			'list_kategori' => $this->admin->getkategori(),
+			'list_tag' => $this->admin->gettag(),
 		);
 		return view('admin/berita/edit_data', $data);
 	}

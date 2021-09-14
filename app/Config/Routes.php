@@ -21,6 +21,9 @@ $routes->setAutoRoute(true);
 
 // user routes 
 $routes->get('/', 'Home::index');
+$routes->get('pencarian', 'Pencarian::search');
+$routes->get('pencarian/(:any)', 'Pencarian::search/$1');
+
 
 // admin routes 
 $routes->get('/admin/login', 'Admin/AdminLogin::index');
@@ -38,6 +41,13 @@ $routes->group('admin', ['filter' => 'authadminfilter'], function($routes) {
 	$routes->get('berita/edit_data/:id_berita', 'Admin/Berita::edit_data');
 	$routes->post('berita/actionedit/:id_berita', 'Admin/Berita::actionedit');
 	$routes->get('berita/actiondelete/:id_berita', 'Admin/Berita::actiondelete');
+
+	$routes->get('tag', 'Admin/Tag::index');
+	$routes->get('tag/tambah_data', 'Admin/Tag::tambah_data');
+	$routes->post('tag/actiontambah', 'Admin/Tag::actiontambah');
+	$routes->get('tag/edit_data/:id_tag', 'Admin/Tag::edit_data');
+	$routes->post('tag/actionedit/:id_tag', 'Admin/Tag::actionedit');
+	$routes->get('tag/actiondelete/:id_tag', 'Admin/Tag::actiondelete');
 
 	$routes->get('pesan', 'Admin/Pesan::index');
 
@@ -77,9 +87,9 @@ $routes->group('admin', ['filter' => 'authadminfilter'], function($routes) {
 	$routes->get('users', 'Admin/Users::index');
 	$routes->get('users/actionaktif/:id', 'Admin/Users::actionaktif');
 	$routes->get('users/actiontidakaktif/:id', 'Admin/Users::actiontidakaktif');
-
-
 });
+
+// api routes
 
 
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
