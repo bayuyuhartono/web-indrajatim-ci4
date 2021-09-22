@@ -19,7 +19,7 @@ class Tag extends AdminBaseController
 	{
 		$data = array(
 			'title' => 'INDRA JATIM',
-			'subtitle' => 'Berita',
+			'subtitle' => 'Tag',
 			'list_tag' => $this->admin->gettag()
 		);
 		return view('admin/tag/index', $data);
@@ -37,7 +37,7 @@ class Tag extends AdminBaseController
 	public function actiontambah()
 	{ 
 		$data = array(
-			'nama_tag'  			=> $this->request->getPost('tag'),
+			'nama_tag'  			=> strtolower($this->request->getPost('tag')),
 		);
 		$this->global->InsertData('tbl_tag', $data);
 		session()->setFlashdata('success', 'Data Berhasil di Simpan');
@@ -49,7 +49,7 @@ class Tag extends AdminBaseController
 		$tag = $this->admin->gettag("where id_tag='$id_tag' ");
 		$data = array(
 			'title' => 'INDRA JATIM',
-			'subtitle' => 'Edit Berita',
+			'subtitle' => 'Edit Tag',
 			'id_tag' => (isset($tag[0]['id_tag'])) ? $tag[0]['id_tag'] : "",
 			'nama_tag' => (isset($tag[0]['nama_tag'])) ? $tag[0]['nama_tag'] : "",
 		);
@@ -60,7 +60,7 @@ class Tag extends AdminBaseController
 	{
 		$id_tag = $this->request->getPost('id_tag');
 		$data = array(
-			'nama_tag'  			=> $this->request->getPost('nama_tag'),
+			'nama_tag'  			=> strtolower($this->request->getPost('nama_tag')),
 		);
 		$this->global->UpdateData('tbl_tag', $data, array('id_tag' => $id_tag));
 		session()->setFlashdata('success', 'Data Berhasil di Edit');

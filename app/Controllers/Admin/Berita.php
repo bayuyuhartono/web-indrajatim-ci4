@@ -50,6 +50,15 @@ class Berita extends AdminBaseController
 			if ($key != 0) {
 				$tag .= ',';
 			}
+
+			$check = $this->admin->gettag("where nama_tag='".strtolower($value)."'");
+			if (count($check) < 1) {
+				$data = array(
+					'nama_tag'  			=> strtolower($value),
+				);
+				$this->global->InsertData('tbl_tag', $data);
+			}
+
 			$tag .= $value;
 		}
 		
@@ -106,17 +115,24 @@ class Berita extends AdminBaseController
 		$old_name	= $_FILES["gambar"]["name"];
 		$ext 		= pathinfo($old_name, PATHINFO_EXTENSION);
 		$new_name	= time().'.'.$ext;
-		// $config = array(
-		// 	'upload_path' 		=> './assets/admin/upload/berita/',
-		// 	'allowed_types' 	=> 'jpg|png|jpeg',
-		// 	'file_name'			=> $new_name,
-		// 	'image_library'		=> 'gd2',
-		// 	'source_image'		=> './assets/admin/upload/berita/'.$new_name,
-		// 	'create_thumb'		=> true,
-		// 	'maintain_ratio'	=> true,
-		// 	'thumb_marker'     	=> '',	
-		// );
-		// $this->load->library('upload', $config);
+		
+		$tag = '';
+		$tagarr = $this->request->getPost('tag');
+		foreach ($tagarr as $key => $value) {
+			if ($key != 0) {
+				$tag .= ',';
+			}
+
+			$check = $this->admin->gettag("where nama_tag='".strtolower($value)."'");
+			if (count($check) < 1) {
+				$data = array(
+					'nama_tag'  			=> strtolower($value),
+				);
+				$this->global->InsertData('tbl_tag', $data);
+			}
+			
+			$tag .= $value;
+		}
 
 		if (!$this->request->getPost('gambar')) 
 		{
@@ -130,6 +146,7 @@ class Berita extends AdminBaseController
 				'slide'  	 		=> $this->request->getPost('slide'),
 				'tanggal'   		=> date('Y-m-d', strtotime($this->request->getPost('tanggal'))).' '.$jam,
 				'tanggal_diubah'   		=> date('Y-m-d H:i:s').' '.$jam,
+				'tag'				=> $tag,
 			);
 			// $id = $this->db->where('id_berita', $id_berita);
 			// $query = $this->db->get('tbl_berita');
@@ -154,11 +171,9 @@ class Berita extends AdminBaseController
 				'tanggal'   		=> date('Y-m-d', strtotime($this->request->getPost('tanggal'))).' '.$jam,
 				'tanggal_diubah'   		=> date('Y-m-d H:i:s').' '.$jam,
 				'gambar'   			=> $new_name,
+				'tag' => $tag,
 			);
-			// $id = $this->db->where('id_berita', $id_berita);
-			// $query = $this->db->get('tbl_berita');
-			// $row = $query->row();
-			// unlink("./assets/admin/upload/berita/$row->gambar");
+			
 			$this->global->UpdateData('tbl_berita', $data, array('id_berita' => $id_berita));
 			session()->setFlashdata('success', 'Data Berhasil di Edit');
 			return redirect()->back();

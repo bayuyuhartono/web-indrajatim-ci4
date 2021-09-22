@@ -19,6 +19,9 @@ $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
 
+// sitemap 
+$routes->get('sitemap\.xml', 'SitemapController::index');
+$routes->get('(:any)/sitemap\.xml', 'SitemapController::kategori/$1');
 // user routes 
 $routes->get('/', 'Home::index');
 $routes->get('pencarian', 'Pencarian::search');
@@ -26,8 +29,8 @@ $routes->get('pencarian/(:any)', 'Pencarian::search/$1');
 
 
 // admin routes 
-$routes->get('/admin/login', 'Admin/AdminLogin::index');
-$routes->get('/admin/logout', 'Admin/AdminLogin::logout');
+$routes->get('/admin/login', 'Admin/Adminlogin::index');
+$routes->get('/admin/logout', 'Admin/Adminlogin::logout');
 $routes->group('admin', ['filter' => 'authadminfilter'], function($routes) {
 	
 	$routes->get('/', 'Admin/AdminDashboard::index');
@@ -41,6 +44,13 @@ $routes->group('admin', ['filter' => 'authadminfilter'], function($routes) {
 	$routes->get('berita/edit_data/:id_berita', 'Admin/Berita::edit_data');
 	$routes->post('berita/actionedit/:id_berita', 'Admin/Berita::actionedit');
 	$routes->get('berita/actiondelete/:id_berita', 'Admin/Berita::actiondelete');
+
+	$routes->get('penulis', 'Admin/Penulis::index');
+	$routes->get('penulis/tambah_data', 'Admin/Penulis::tambah_data');
+	$routes->post('penulis/actiontambah', 'Admin/Penulis::actiontambah');
+	$routes->get('penulis/edit_data/:id_penulis', 'Admin/Penulis::edit_data');
+	$routes->post('penulis/actionedit/:id_penulis', 'Admin/Penulis::actionedit');
+	$routes->get('penulis/actiondelete/:id_penulis', 'Admin/Penulis::actiondelete');
 
 	$routes->get('tag', 'Admin/Tag::index');
 	$routes->get('tag/tambah_data', 'Admin/Tag::tambah_data');

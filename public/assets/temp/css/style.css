@@ -113,6 +113,14 @@ section {
     }
 }
 
+#demo-2 a {
+    color: #181818;
+}
+
+#demo-2 a:hover {
+    color: #007bff;
+}
+
 body.dark {
     background-color: #181818;
     color: #999
@@ -1401,7 +1409,10 @@ section.dark,
 #header .header-inner #logo a [class*=logo-],
 #header #header-wrap #logo a>img,
 #header #header-wrap #logo a [class*=logo-] {
-    display: none
+    display: block;
+    margin-top: 25px;
+    width: 100%;
+    height: 30px;
 }
 
 #header .header-inner #logo a .logo-default,
@@ -20244,10 +20255,6 @@ body[data-bg-image] {
     color: #333 !important
 }
 
-.logo-default {
-    font-size: 35px !important;
-}
-
 *,
 *::before,
 *::after {
@@ -20446,7 +20453,7 @@ body[data-bg-image] {
 }
 
 .lazy-bg {
-    background-size: contain !important;
+    background-size: cover !important;
 }
 
 .loading-bar {

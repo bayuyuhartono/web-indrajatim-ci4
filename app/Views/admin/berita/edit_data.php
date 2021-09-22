@@ -31,7 +31,7 @@
                       <input type="file" name="gambar" class="form-control">
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-5">
                     <div class="form-group"> 
                       <label>Kategori</label>
                       <select name="kategori" class="form-control select2">
@@ -41,34 +41,34 @@
                       </select>
                     </div>
                   </div>
-                  <div class="col-md-4">               
-                    <div class="form-group">                      
-											<label>Tag</label>                      
-											<select name="tag[]" class="form-control select2" multiple="multiple">                        
-												<?php foreach ($list_tag as $data) { ?>                          
-													<option value="<?= $data['nama_tag'];?>" <?= in_array($data['nama_tag'], $tag) ? 'selected = "selected"' : '' ?>><?= $data['nama_tag'];?></option>                        
-												<?php } ?>                      
-											</select>                    
-										</div>
-                  </div> 
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label>Caption</label>
-                      <input type="text" name="caption" class="form-control" value="<?= $caption;?>">
-                    </div>
-                  </div>
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <label>Tanggal Publish</label>
                       <input type="date" name="tanggal" class="form-control" value="<?= date('Y-m-d', strtotime($tanggal)); ?>">
                     </div>
                   </div>
-                  <div class="col-md-4">               
+                  <div class="col-md-5">               
                     <div class="form-group">                      
 											<label>Atur Sebagai Slide</label>                      
 											<select name="slide" class="form-control select2">                        
 													<option value="0" <?= $slide == "0" ? 'selected = "selected"' : '' ?>>Tidak</option>
 													<option value="1" <?= $slide == "1" ? 'selected = "selected"' : '' ?>>Ya</option>
+											</select>                    
+										</div>
+                  </div> 
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Caption</label>
+                      <textarea type="text" name="caption" class="form-control" rows="4" cols="50"><?= $caption;?></textarea>
+                    </div>
+                  </div>
+                  <div class="col-md-5">               
+                    <div class="form-group">                      
+											<label>Tag</label>                      
+											<select name="tag[]" class="form-control select2 tokenizer" multiple="multiple">                        
+												<?php foreach ($list_tag as $data) { ?>                          
+													<option value="<?= $data['nama_tag'];?>" <?= in_array($data['nama_tag'], $tag) ? 'selected = "selected"' : '' ?>><?= $data['nama_tag'];?></option>                        
+												<?php } ?>                      
 											</select>                    
 										</div>
                   </div> 

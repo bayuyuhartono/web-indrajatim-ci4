@@ -30,6 +30,12 @@ class M_admin extends Model
 		return $query->getResultArray();
 	}
 
+	public function getpenulis($where = '')
+	{
+		$query = $this->db->query("select * from tbl_penulis $where;");
+		return $query->getResultArray();
+	}
+
 	public function getsocmed($where = '')
 	{
 		$query = $this->db->query("select * from tbl_socmed $where;");

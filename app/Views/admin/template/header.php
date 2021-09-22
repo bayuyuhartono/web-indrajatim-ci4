@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <link rel="shortcut icon" href="<?= base_url('assets/indrajatim_assets/logoijt-admin.png');?>" />
   <title><?= $title;?></title>
   <!-- General CSS Files -->
   <link rel="stylesheet" href="<?= base_url('assets/admin/css/app.min.css');?>">
@@ -79,6 +80,7 @@
                 <li><a class="nav-link" href="<?= base_url('admin/kategori');?>">Kategori</a></li>
                 <li><a class="nav-link" href="<?= base_url('admin/berita');?>">Berita</a></li>
                 <li><a class="nav-link" href="<?= base_url('admin/tag');?>">Tag</a></li>
+                <li><a class="nav-link" href="<?= base_url('admin/penulis');?>">Penulis</a></li>
               </ul>
             </li>
             <li class="dropdown">

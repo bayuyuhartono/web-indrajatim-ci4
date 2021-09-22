@@ -45,6 +45,10 @@
                     "orderable": false,
                 }, ],
             });
+
+            $(".tokenizer").select2({
+                tags: true,
+            })
         });
     </script>
 </body>
