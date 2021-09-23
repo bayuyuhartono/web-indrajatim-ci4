@@ -2,83 +2,201 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>404 Page Not Found</title>
+	<title>Indra Jatim</title>
+	<link rel="shortcut icon" href="<?= base_url('assets/indrajatim_assets/logoijt.png');?>" />
 
 	<style>
-		div.logo {
-			height: 200px;
-			width: 155px;
-			display: inline-block;
-			opacity: 0.08;
-			position: absolute;
-			top: 2rem;
-			left: 50%;
-			margin-left: -73px;
-		}
-		body {
-			height: 100%;
-			background: #fafafa;
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			color: #777;
-			font-weight: 300;
-		}
-		h1 {
-			font-weight: lighter;
-			letter-spacing: 0.8;
-			font-size: 3rem;
-			margin-top: 0;
-			margin-bottom: 0;
-			color: #222;
-		}
-		.wrap {
-			max-width: 1024px;
-			margin: 5rem auto;
-			padding: 2rem;
-			background: #fff;
+		@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+			body {
+			font-family: 'Open Sans';
+			padding: 0;
+			margin: 0;
+			}
+
+			a,
+			a:visited {
+			color: #fff;
+			outline: none;
+			text-decoration: none;
+			}
+
+			a:hover,
+			a:focus,
+			a:visited:hover {
+			color: #fff;
+			text-decoration: none;
+			}
+
+			* {
+			paading: 0;
+			margin: 0;
+			}
+
+			#oopss {
+			background: #cfd1d8;
 			text-align: center;
-			border: 1px solid #efefef;
-			border-radius: 0.5rem;
+			margin-bottom: 50px;
+			font-weight: 400;
+			font-size: 20px;
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			line-height: 1.5em;
+			z-index: 9999;
+			left: 0px;
+			}
+
+			#error-text {
+			top: 30%;
 			position: relative;
-		}
-		pre {
-			white-space: normal;
-			margin-top: 1.5rem;
-		}
-		code {
-			background: #fafafa;
-			border: 1px solid #efefef;
-			padding: 0.5rem 1rem;
+			font-size: 40px;
+			color: #eee;
+			}
+
+			#error-text a {
+			color: #eee;
+			}
+
+			#error-text a:hover {
+			color: #fff;
+			}
+
+			#error-text p {
+			color: #5b5a5a;
+			margin: 70px 0 0 0;
+			}
+
+			#error-text i {
+			margin-left: 10px;
+			}
+
+			#error-text p.hmpg {
+			margin: 40px 0 0 0;
+			}
+
+			#error-text span {
+			position: relative;
+			background: #ef4824;
+			color: #fff;
+			font-size: 300%;
+			padding: 0 20px;
 			border-radius: 5px;
-			display: block;
-		}
-		p {
-			margin-top: 1.5rem;
-		}
-		.footer {
-			margin-top: 2rem;
-			border-top: 1px solid #efefef;
-			padding: 1em 2em 0 2em;
-			font-size: 85%;
-			color: #999;
-		}
-		a:active,
-		a:link,
-		a:visited {
-			color: #dd4814;
-		}
+			font-weight: bolder;
+			transition: all .5s;
+			cursor: pointer;
+			margin: 0 0 40px 0;
+			}
+
+			#error-text span:hover {
+			background: #d7401f;
+			color: #fff;
+			-webkit-animation: jelly .5s;
+			-moz-animation: jelly .5s;
+			-ms-animation: jelly .5s;
+			-o-animation: jelly .5s;
+			animation: jelly .5s;
+			}
+
+			#error-text span:after {
+			top: 100%;
+			left: 50%;
+			border: solid transparent;
+			content: '';
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+			border-color: rgba(136, 183, 213, 0);
+			border-top-color: #ef4824;
+			border-width: 7px;
+			margin-left: -7px;
+			}
+
+			@-webkit-keyframes jelly {
+			from, to {
+				-webkit-transform: scale(1, 1);
+				transform: scale(1, 1);
+			}
+			25% {
+				-webkit-transform: scale(.9, 1.1);
+				transform: scale(.9, 1.1);
+			}
+			50% {
+				-webkit-transform: scale(1.1, .9);
+				transform: scale(1.1, .9);
+			}
+			75% {
+				-webkit-transform: scale(.95, 1.05);
+				transform: scale(.95, 1.05);
+			}
+			}
+
+			@keyframes jelly {
+			from, to {
+				-webkit-transform: scale(1, 1);
+				transform: scale(1, 1);
+			}
+			25% {
+				-webkit-transform: scale(.9, 1.1);
+				transform: scale(.9, 1.1);
+			}
+			50% {
+				-webkit-transform: scale(1.1, .9);
+				transform: scale(1.1, .9);
+			}
+			75% {
+				-webkit-transform: scale(.95, 1.05);
+				transform: scale(.95, 1.05);
+			}
+			}
+			/* CSS Error Page Responsive */
+
+			@media only screen and (max-width:640px) {
+			#error-text span {
+				font-size: 200%;
+			}
+			#error-text a:hover {
+				color: #fff;
+			}
+			}
+
+			.back:active {
+			-webkit-transform: scale(0.95);
+			-moz-transform: scale(0.95);
+			transform: scale(0.95);
+			background: #f53b3b;
+			color: #fff;
+			}
+
+			.back:hover {
+			background: #4c4c4c;
+			color: #fff;
+			}
+
+			.back {
+			text-decoration: none;
+			background: #5b5a5a;
+			color: #fff;
+			padding: 10px 20px;
+			font-size: 20px;
+			font-weight: 700;
+			line-height: normal;
+			text-transform: uppercase;
+			border-radius: 3px;
+			-webkit-transform: scale(1);
+			-moz-transform: scale(1);
+			transform: scale(1);
+			transition: all 0.5s ease-out;
+			}
 	</style>
 </head>
 <body>
-	<div class="wrap">
-		<h1>404 - File Not Found</h1>
-
-		<p>
-			<?php if (! empty($message) && $message !== '(null)') : ?>
-				<?= nl2br(esc($message)) ?>
-			<?php else : ?>
-				Sorry! Cannot seem to find the page you were looking for.
-			<?php endif ?>
-		</p>
+	<div id='oopss'>
+	<div id='error-text'>
+		<span>404</span>
+		<p>HALAMAN TIDAK DITEMUKAN</p>
+		<p class='hmpg'><a href='<?=base_url()?>' class="back">kEMBALI KE HALAMAN UTAMA</a></p>
+	</div>
 	</div>
 </body>
 </html>

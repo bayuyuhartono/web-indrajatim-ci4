@@ -13,8 +13,8 @@
     <meta property="og:url" content="<?= $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>">
     <meta property="og:title" content="<?= isset($judul_berita) ? $judul_berita : 'Berita Terkini Jawa Timur';?> - indrajatim.com">
     <meta property="og:description" content="<?= isset($caption) ? $caption : 'INDRAJATIM.com adalah perusahaan media dan berita jawa timur';?>">
-    <meta property="og:image" content="<?= isset($gambar_berita) ? base_url('assets/admin/upload/berita/'.$gambar_berita) : base_url('assets/indrajatim_assets/indrajatim_square.jpg');?>">
-    <meta property="og:image:secure_url" content="<?= isset($gambar_berita) ? base_url('assets/admin/upload/berita/'.$gambar_berita) : base_url('assets/indrajatim_assets/indrajatim_square.jpg');?>">
+    <meta property="og:image" content="<?= isset($gambar_berita) ? base_url('assets/admin/upload/berita/'.$gambar_berita) : base_url('assets/indrajatim_assets/indrajatim-og.png');?>">
+    <meta property="og:image:secure_url" content="<?= isset($gambar_berita) ? base_url('assets/admin/upload/berita/'.$gambar_berita) : base_url('assets/indrajatim_assets/indrajatim-og.png');?>">
     <meta property="og:site_name" content="INDRAJATIM.com" />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -22,7 +22,7 @@
     <meta name="twitter:creator" content="@indrajatimcom">
     <meta name="twitter:title" content="<?= isset($judul_berita) ? $judul_berita : 'Berita Terkini Jawa Timur';?> - indrajatim.com">
     <meta name="twitter:description" content="<?= isset($caption) ? $caption : 'INDRAJATIM.com adalah perusahaan media dan berita jawa timur';?>">
-    <meta name="twitter:image" content="<?= isset($gambar_berita) ? base_url('assets/admin/upload/berita/'.$gambar_berita) : base_url('assets/indrajatim_assets/indrajatim_square.jpg');?>">
+    <meta name="twitter:image" content="<?= isset($gambar_berita) ? base_url('assets/admin/upload/berita/'.$gambar_berita) : base_url('assets/indrajatim_assets/indrajatim-og.png');?>">
     
     <link rel="shortcut icon" href="<?= base_url('assets/indrajatim_assets/logoijt.png');?>" />
     <link rel="canonical" href="<?= str_replace("index.php/","",current_url()); ?>" />
