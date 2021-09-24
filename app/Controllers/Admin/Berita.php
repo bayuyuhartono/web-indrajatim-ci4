@@ -42,7 +42,7 @@ class Berita extends AdminBaseController
 		$jam = $date->format('H:i:s');
 		$old_name	= $_FILES["gambar"]["name"];
 		$ext 		= pathinfo($old_name, PATHINFO_EXTENSION);
-		$new_name	= time().'.'.$ext;
+		$new_name	= time().'.'.$ext.'-berita';
 
 		$tag = '';
 		$tagarr = $this->request->getPost('tag');
@@ -120,7 +120,7 @@ class Berita extends AdminBaseController
 		$jam = $date->format('H:i:s');
 		$old_name	= $_FILES["gambar"]["name"];
 		$ext 		= pathinfo($old_name, PATHINFO_EXTENSION);
-		$new_name	= time().'.'.$ext;
+		$new_name	= time().'.'.$ext.'-berita';
 		
 		$tag = '';
 		$tagarr = $this->request->getPost('tag');
