@@ -3,7 +3,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class M_admin extends Model 
+class m_admin extends Model 
 {	
 	public function getkategori($where = '')
 	{

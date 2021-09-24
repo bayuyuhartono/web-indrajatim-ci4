@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class M_global extends Model 
+class m_global extends Model 
 {
 	public function InsertData($table_name,$data)
 	{
