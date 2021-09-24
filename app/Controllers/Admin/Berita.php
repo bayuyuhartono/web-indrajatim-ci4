@@ -61,9 +61,15 @@ class Berita extends AdminBaseController
 
 			$tag .= $value;
 		}
-		
+
 		$dataBerkas = $this->request->getFile('gambar');
-		$dataBerkas->move('assets/admin/upload/berita/', $new_name);
+		$image = \Config\Services::image()
+			->withFile($dataBerkas)
+			->resize(600, 600, true, 'height')
+			->save(FCPATH .'assets/admin/upload/berita/'. $new_name);
+
+		$dataBerkas->move(WRITEPATH . 'uploads');
+
 		$data = array(
 			'judul'  			=> $this->request->getPost('judul'),
 			'slug'  			=> $this->request->getPost('slug'),
@@ -156,7 +162,12 @@ class Berita extends AdminBaseController
 			return redirect()->back();
 		}else{
 			$dataBerkas = $this->request->getFile('gambar');
-			$dataBerkas->move('assets/admin/upload/berita/', $new_name);
+			$image = \Config\Services::image()
+				->withFile($dataBerkas)
+				->resize(600, 600, true, 'height')
+				->save(FCPATH .'assets/admin/upload/berita/'. $new_name);
+
+			$dataBerkas->move(WRITEPATH . 'uploads');
 
 			// $upload_data   = array('uploads' => $this->upload->data());				  
 			// $this->load->library('image_lib', $config);
