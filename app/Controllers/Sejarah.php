@@ -51,7 +51,9 @@ class Sejarah extends BaseController
 		$socmed_tiga = $this->admin->getsocmed("where id='3' ");
 		$socmed_empat = $this->admin->getsocmed("where id='4' ");
 		$socmed_lima = $this->admin->getsocmed("where id='5' ");
-		$detail = $this->admin->getberita("where slug='$slug' ");
+		$detail = $this->admin->getberita("where slug='$slug' "); if (count($detail) < 1) {
+			return view('errors/html/error_404');
+		}
 		$id = $detail[0]['id'];
 		$countkomentar = $this->admin->countkomentar("where berita_id='$id' ");
 		$data = array(

@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NP2T99J');</script>
+    <!-- End Google Tag Manager -->
+
     <title><?= isset($judul_berita) ? $judul_berita : 'Berita Terkini Jawa Timur';?> - indrajatim.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="INDRA JATIM" />
-    <meta name="description" content="<?= isset($caption) ? $caption : 'INDRAJATIM.com adalah perusahaan media dan berita jawa timur';?>">
-    <meta name="keyword" content="<?= isset($tag) ? $tag : 'Berita Terkini, Berita Jatim, Berita Politik, Berita Terbaru, Berita Hari Ini';?>">
+    <meta name="description" content="<?= isset($caption) ? $caption : 'Berita terkini dan terbaru dari Jawa Timur mengenai politik, budaya, sejarah, hiburan dan informasi masyarakat.';?>">
+    <meta name="keyword" content="<?= isset($tag) ? $tag : 'Berita Terkini, Berita Jatim, Berita Politik, Berita Terbaru, Berita Hari Ini, Budaya';?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta property="og:type" content="article"/>
     <meta property="og:url" content="<?= $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>">
     <meta property="og:title" content="<?= isset($judul_berita) ? $judul_berita : 'Berita Terkini Jawa Timur';?> - indrajatim.com">
-    <meta property="og:description" content="<?= isset($caption) ? $caption : 'INDRAJATIM.com adalah perusahaan media dan berita jawa timur';?>">
+    <meta property="og:description" content="<?= isset($caption) ? $caption : 'Berita terkini dan terbaru dari Jawa Timur mengenai politik, budaya, sejarah, hiburan dan informasi masyarakat';?>">
     <meta property="og:image" content="<?= isset($gambar_berita) ? base_url('assets/admin/upload/berita/'.$gambar_berita) : base_url('assets/indrajatim_assets/indrajatim-og.png');?>">
     <meta property="og:image:secure_url" content="<?= isset($gambar_berita) ? base_url('assets/admin/upload/berita/'.$gambar_berita) : base_url('assets/indrajatim_assets/indrajatim-og.png');?>">
     <meta property="og:site_name" content="INDRAJATIM.com" />
@@ -21,9 +30,11 @@
     <meta name="twitter:site" content="@indrajatimcom" />
     <meta name="twitter:creator" content="@indrajatimcom">
     <meta name="twitter:title" content="<?= isset($judul_berita) ? $judul_berita : 'Berita Terkini Jawa Timur';?> - indrajatim.com">
-    <meta name="twitter:description" content="<?= isset($caption) ? $caption : 'INDRAJATIM.com adalah perusahaan media dan berita jawa timur';?>">
+    <meta name="twitter:description" content="<?= isset($caption) ? $caption : 'Berita terkini dan terbaru dari Jawa Timur mengenai politik, budaya, sejarah, hiburan dan informasi masyarakat';?>">
     <meta name="twitter:image" content="<?= isset($gambar_berita) ? base_url('assets/admin/upload/berita/'.$gambar_berita) : base_url('assets/indrajatim_assets/indrajatim-og.png');?>">
     
+    <meta name="google-site-verification" content="2wEnOD0KzP2P4JJj45kb9w9EgQfvf5pfWGCuhOIWOks" />
+
     <link rel="shortcut icon" href="<?= base_url('assets/indrajatim_assets/logoijt.png');?>" />
     <link rel="canonical" href="<?= str_replace("index.php/","",current_url()); ?>" />
 
@@ -79,6 +90,12 @@
 
 </style>
 <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NP2T99J"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div class="body-inner">
         <header id="header" class="header-always" data-fullwidth="true">
             <div class="header-inner">

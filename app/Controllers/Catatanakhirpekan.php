@@ -39,6 +39,7 @@ class Catatanakhirpekan extends BaseController
 			'list_catatanakhirpekan' => $this->admin->getberita("where kategori='Catatan Akhir Pekan' AND tanggal <= NOW() order by tanggal DESC limit 12 "),
 			'list_slide' => $this->admin->getberita("where kategori='Catatan Akhir Pekan' AND tanggal <= NOW() AND slide='1' order by tanggal DESC limit 3 "),
 			'kategori_name' => 'catatan akhir pekan',
+			'caption' => 'Catatan akhir pekan',
 		);
 		return view('viewdata', $data);
 	}
@@ -51,7 +52,9 @@ class Catatanakhirpekan extends BaseController
 		$socmed_tiga = $this->admin->getsocmed("where id='3' ");
 		$socmed_empat = $this->admin->getsocmed("where id='4' ");
 		$socmed_lima = $this->admin->getsocmed("where id='5' ");
-		$detail = $this->admin->getberita("where slug='$slug' ");
+		$detail = $this->admin->getberita("where slug='$slug' "); if (count($detail) < 1) {
+			return view('errors/html/error_404');
+		}
 		$id = $detail[0]['id'];
 		$countkomentar = $this->admin->countkomentar("where berita_id='$id' ");
 		$data = array(
