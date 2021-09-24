@@ -66,8 +66,8 @@
             </div>
         </div>
     </section>
-    <script src="<?= base_url('assets/login/js/vendor/modernizr-3.6.0.min.js');?>"></script>
-    <script src="<?= base_url('assets/login/js/vendor/jquery-3.5.1.min.js');?>"></script>
+    <script src="<?= base_url('assets/login/js/vendorjs/modernizr-3.6.0.min.js');?>"></script>
+    <script src="<?= base_url('assets/login/js/vendorjs/jquery-3.5.1.min.js');?>"></script>
     <script src="<?= base_url('assets/login/js/bootstrap.min.js');?>"></script>
     <script src="<?= base_url('assets/login/js/jquery.slicknav.min.js');?>"></script>
     <script src="<?= base_url('assets/login/js/fancyBox%20v2.1.5.js');?>"></script>
