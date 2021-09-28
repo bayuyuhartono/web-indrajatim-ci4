@@ -42,7 +42,7 @@ class Home extends BaseController
 			'img_socmedempat' => (isset($socmed_empat[0]['gambar'])) ? $socmed_empat[0]['gambar'] : "",
 			'img_socmedlima' => (isset($socmed_lima[0]['gambar'])) ? $socmed_lima[0]['gambar'] : "",
 			'list_slide' => $this->admin->getberita("where tanggal <= NOW() AND slide='1' order by tanggal DESC limit 3 "),
-			'kategori_name' => 'home',
+			'kategori_name' => 'berita',
 			'image_banneratas' => $this->admin->getbanner("where posisi='Atas' and status='1' "),
 			'image_bannerkanan' => $this->admin->getbanner("where posisi='Kanan' and status='1' "),
 			'image_bannerbawah' => $this->admin->getbanner("where posisi='Bawah' and status='1' "),

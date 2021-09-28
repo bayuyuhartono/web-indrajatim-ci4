@@ -53,7 +53,7 @@ class Berita extends BaseController
 			'nama' => session('nama'),
 			'emails' => session('email'),
 			'list_slide' => $this->admin->getberita("where tanggal <= NOW() AND slide='1' order by tanggal DESC limit 3 "),
-			'kategori_name' => 'home',
+			'kategori_name' => 'berita',
 			'image_banneratas' => $this->admin->getbanner("where posisi='Atas' and status='1' "),
 			'image_bannerkanan' => $this->admin->getbanner("where posisi='Kanan' and status='1' "),
 			'image_bannerbawah' => $this->admin->getbanner("where posisi='Bawah' and status='1' "),
