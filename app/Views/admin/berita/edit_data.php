@@ -76,7 +76,10 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <textarea name="content" id="ckeditor"><?= $content;?></textarea>
+                    <?php
+                        $data = str_replace( '&', '&amp;', $content );
+                    ?>
+                      <textarea name="content" id="editor"><?= $data;?></textarea>
                     </div>  
                   </div>  
                 </div>  
@@ -96,12 +99,50 @@
   </section>
 </div>
 <?= $this->include('admin/template/footer'); ?>  
-<script type="text/javascript">
-  $(function () {
-    CKEDITOR.replace('ckeditor', {
-      filebrowserImageBrowseUrl : '<?= base_url();?>assets/kcfinder/browse.php',
-      height: '400px'             
+<script type="text/javascript">    
+    ClassicEditor.create(document.querySelector("#editor"), {
+    toolbar: {
+      items: [
+        "heading",
+        "|",
+        "bold",
+        "italic",
+        "link",
+        "bulletedList",
+        "numberedList",
+        "|",
+        "indent",
+        "outdent",
+        "|",
+        "imageUpload",
+        "blockQuote",
+        "mediaEmbed",
+        "undo",
+        "redo",
+      ],
+    },
+    language: "es",
+    image: {
+      toolbar: ["imageTextAlternative", "imageStyle:full", "imageStyle:side"],
+    },
+    licenseKey: "",
+    ckfinder:{
+        uploadUrl: "<?= base_url('admin/berita/uploadImages') ?>",
+    },
+  })
+    .then((editor) => {
+      window.editor = editor;
+    })
+    .catch((error) => {
+      console.error("Oops, something went wrong!");
+      console.error(
+        "Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:"
+      );
+      console.warn("Build id: ref2goguw78q-8ghiwfe1qu83");
+      console.error(error);
     });
+
+    $(function () {
 
     var slug = function(str) {
       var $slug = '';
@@ -120,61 +161,10 @@
   });
 </script>
 <script>
-  (function() {
-    var mathElements = [
-    'math',
-    'maction',
-    'maligngroup',
-    'malignmark',
-    'menclose',
-    'merror',
-    'mfenced',
-    'mfrac',
-    'mglyph',
-    'mi',
-    'mlabeledtr',
-    'mlongdiv',
-    'mmultiscripts',
-    'mn',
-    'mo',
-    'mover',
-    'mpadded',
-    'mphantom',
-    'mroot',
-    'mrow',
-    'ms',
-    'mscarries',
-    'mscarry',
-    'msgroup',
-    'msline',
-    'mspace',
-    'msqrt',
-    'msrow',
-    'mstack',
-    'mstyle',
-    'msub',
-    'msup',
-    'msubsup',
-    'mtable',
-    'mtd',
-    'mtext',
-    'mtr',
-    'munder',
-    'munderover',
-    'semantics',
-    'annotation',
-    'annotation-xml'
-    ];
-
-    CKEDITOR.plugins.addExternal('ckeditor_wiris', 'https://ckeditor.com/docs/ckeditor4/4.14.1/examples/assets/plugins/ckeditor_wiris/', 'plugin.js');
-
-    CKEDITOR.replace('ckeditor', {
-      extraPlugins: 'ckeditor_wiris',
-        // For now, MathType is incompatible with CKEditor file upload plugins.
-        height: 320,
-        // Update the ACF configuration with MathML syntax.
-        extraAllowedContent: mathElements.join(' ') + '(*)[*]{*};img[data-mathml,data-custom-editor,role](Wirisformula)'
-      });     
-  });
+  ClassicEditor
+	.create( document.querySelector( '#editor' ) )
+	.catch( error => {
+		console.error( error );
+	} );
 
 </script>

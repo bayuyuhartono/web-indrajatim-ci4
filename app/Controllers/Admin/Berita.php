@@ -193,15 +193,45 @@ class Berita extends AdminBaseController
 
 	public function actiondelete($id_berita)
 	{
-	    $id = $this->db->where('id_berita', $id_berita);
-	    $query = $this->db->get('tbl_berita');
-	    $row = $query->row();
-	    unlink("./assets/admin/upload/berita/$row->gambar");
+	    $row = $this->admin->getberita("where id_berita='$id_berita' ");
+	    unlink("./assets/admin/upload/berita/".$row[0]['gambar']);
 	    $this->global->DeleteData('tbl_berita', array('id_berita' => $id_berita));
-	    $this->global->DeleteData('tbl_komentar', array('id_berita' => $id_berita));
+	    // $this->global->DeleteData('tbl_komentar', array('id_berita' => $id_berita));
 		session()->setFlashdata('warning', 'Data Berhasil di Hapus');
 		return redirect()->back();
 	} 
+
+	public function uploadImages()
+    {
+        $validated = $this->validate([
+            'upload' => [
+                'uploaded[upload]',
+                'mime_in[upload,image/jpg,image/jpeg,image/png]',
+                'max_size[upload,1024]',
+            ],
+        ]);
+
+        if($validated)
+        {
+            $file = $this->request->getFile('upload');
+            $fileName = $file->getRandomName().'';
+            $writePath = './assets/admin/upload/thread';
+            $file->move($writePath, $fileName);
+            $data = [
+                "uploaded" => true,
+                "url" => base_url('assets/admin/upload/thread/'.$fileName),
+            ];
+        }else{
+            $data = [
+                "uploaded" => false,
+                "error" => [
+                    "messsages" => $file
+                ],
+            ];
+        }
+        
+        return $this->response->setJSON($data);
+    }
 }
 
 

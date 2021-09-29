@@ -56,7 +56,7 @@ class Tokoh extends BaseController
 		$detail = $this->admin->getberita("where slug='$slug' "); if (count($detail) < 1) {
 			return view('errors/html/error_404');
 		}
-		$id = $detail[0]['id'];
+		$id = $detail[0]['id_berita'];
 		$countkomentar = $this->admin->countkomentar("where berita_id='$id' ");
 		$data = array(
 			'title' => 'INDRA JATIM',

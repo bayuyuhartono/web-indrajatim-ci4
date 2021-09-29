@@ -104,8 +104,8 @@ class m_admin extends Model
 
 	public function counthits($id)
 	{
-		$query = "UPDATE tbl_berita SET count_hits = count_hits + 1 WHERE id_berita = ".$id ;
-      	$this->db->query($query);
+		$query =  $this->db->query("UPDATE tbl_berita SET count_hits = count_hits + 1 WHERE id_berita = ".$id);
+		return $query;
 	}
 
 	public function getusers($where = '')

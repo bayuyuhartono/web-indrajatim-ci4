@@ -6374,7 +6374,7 @@ h6.font-parisienne {
 
 .post-item .post-item-description>h2,
 .post-item .post-item-description>h2>a {
-    font-size: 18px;
+    font-size: 14px;
     letter-spacing: -.1px;
     line-height: 23px;
     margin-bottom: 16px;
@@ -20479,6 +20479,7 @@ body[data-bg-image] {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding-bottom: 5px;
 }
 
 @media only screen and (max-width: 600px) {
