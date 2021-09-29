@@ -26,7 +26,16 @@
     <meta name="author" content="INDRA JATIM" />
     <meta name="description" content="<?= isset($caption) ? $caption : 'Berita terkini dan terbaru dari Jawa Timur mengenai politik, budaya, sejarah, hiburan dan informasi masyarakat.';?>">
     <meta name="keyword" content="<?= isset($tag) ? $tag : 'berita terkini, berita jatim, berita politik, berita terbaru, berita hari ini, budaya';?>">
+    <meta name="news_keyword" content="<?= isset($tag) ? $tag : 'berita terkini, berita jatim, berita politik, berita terbaru, berita hari ini, budaya';?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="googlebot" content="index, follow" />
+    <meta name="author" content="Indra Jatim">
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="id" />
+    <meta name="geo.country" content="id" />
+    <meta http-equiv="content-language" content="In-Id" />
+    <meta name="geo.placename" content="Indonesia" />
 
     <meta property="og:type" content="article"/>
     <meta property="og:url" content="<?= $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>">
