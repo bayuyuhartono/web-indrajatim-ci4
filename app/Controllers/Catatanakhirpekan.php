@@ -76,6 +76,7 @@ class Catatanakhirpekan extends BaseController
 			'id_berita' => (isset($detail[0]['id_berita'])) ? $detail[0]['id_berita'] : "",
 			'judul_berita' => (isset($detail[0]['judul'])) ? $detail[0]['judul'] : "",
 			'caption' => (isset($detail[0]['caption'])) ? $detail[0]['caption'] : "",
+			'tag' => (isset($detail[0]['tag'])) ? $detail[0]['tag'] : "",
 			'content' => (isset($detail[0]['content'])) ? $detail[0]['content'] : "",
 			'gambar_berita' => (isset($detail[0]['gambar'])) ? $detail[0]['gambar'] : "",
 			'tanggal' => (isset($detail[0]['tanggal'])) ? $detail[0]['tanggal'] : "",

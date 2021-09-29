@@ -1,5 +1,13 @@
 <?= $this->include('template/header'); ?>
-<section id="page-content" class="sidebar-right">    
+<style>
+	.home-top {
+		padding-bottom: 0px !important;
+	}
+	.home-bottom {
+		padding-top: 10px !important;
+	}
+</style>
+<section id="page-content" class="sidebar-right home-top">    
 	<div class="container"> 
 		<div class="row">
 			<div class="content col-lg-12">
@@ -72,7 +80,7 @@
 		</div>    
 	</div>
 </section>
-<section id="page-content">    
+<section id="page-content" class="home-bottom">    
 	<div class="container">        
 		<div class="page-title">            
 			<h2>Pilihan Hari Ini</h2>        

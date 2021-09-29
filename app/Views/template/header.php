@@ -45,7 +45,7 @@
     
     <meta name="google-site-verification" content="2wEnOD0KzP2P4JJj45kb9w9EgQfvf5pfWGCuhOIWOks" />
 
-    <link rel="shortcut icon" href="<?= base_url('assets/indrajatim_assets/logoijt.png');?>" />
+    <link rel="shortcut icon" href="<?= base_url('assets/indrajatim_assets/favicon_ijt1.ico');?>" />
     <link rel="canonical" href="<?= str_replace("index.php/","",current_url()); ?>" />
 
     <link href="<?= base_url('assets/temp/css/plugins.css');?>" rel="stylesheet">
