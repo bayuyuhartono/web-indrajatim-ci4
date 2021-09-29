@@ -25,7 +25,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="INDRA JATIM" />
     <meta name="description" content="<?= isset($caption) ? $caption : 'Berita terkini dan terbaru dari Jawa Timur mengenai politik, budaya, sejarah, hiburan dan informasi masyarakat.';?>">
-    <meta name="keyword" content="<?= isset($tag) ? $tag : 'Berita Terkini, Berita Jatim, Berita Politik, Berita Terbaru, Berita Hari Ini, Budaya';?>">
+    <meta name="keyword" content="<?= isset($tag) ? $tag : 'berita terkini, berita jatim, berita politik, berita terbaru, berita hari ini, budaya';?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta property="og:type" content="article"/>
