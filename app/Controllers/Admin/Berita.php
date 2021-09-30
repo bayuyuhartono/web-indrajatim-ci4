@@ -208,14 +208,6 @@ class Berita extends AdminBaseController
 		reset($_FILES);
 		$tmp = current($_FILES);
 		if(is_uploaded_file($tmp['tmp_name'])){
-			if(isset($_SERVER['HTTP_ORIGIN'])){
-				if(in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)){
-					header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
-				}else{
-					header("HTTP/1.1 403 Origin Denied");
-					return;
-				}
-			}
 			// check valid file name
 			if(preg_match("/([^\w\s\d\-_~,;:\[\]\(\).])|([\.]{2,})/", $tmp['name'])){
 				header("HTTP/1.1 400 Invalid file name.");
