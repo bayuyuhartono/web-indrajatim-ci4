@@ -126,7 +126,6 @@
     autosave_restore_when_empty: false,
     autosave_retention: "2m",
     image_advtab: true,
-    content_css: '//www.tiny.cloud/css/codepen.min.css',
     importcss_append: true,
     templates: [{
         title: 'New Table',
