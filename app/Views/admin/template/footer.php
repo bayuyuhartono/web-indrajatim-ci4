@@ -9,7 +9,7 @@
 </div>  
 <!-- General JS Scripts -->  
 <script src="<?= base_url('assets/admin/js/app.min.js');?>"></script>  
-<script src="https://cdn.tiny.cloud/1/wgo0qe6aabh3vickenbemgqpkiyfmzck85pqjkgdrmecnd8v/tinymce/5/tinymce.min.js"></script>
+<script src="https://cdn.tiny.cloud/1/wgo0qe6aabh3vickenbemgqpkiyfmzck85pqjkgdrmecnd8v/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <!-- JS Libraies -->  
 <!-- Page Specific JS File -->  <!-- JS Libraies -->  
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
