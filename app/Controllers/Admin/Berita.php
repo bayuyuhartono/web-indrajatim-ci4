@@ -228,6 +228,7 @@ class Berita extends AdminBaseController
 			return $this->response->setJSON($res);
 		} else {
 			header("HTTP/1.1 500 Server Error");
+			return $this->response->setJSON(array('tes'=>'tes'));
 		}
     }
 }
