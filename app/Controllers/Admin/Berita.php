@@ -203,7 +203,7 @@ class Berita extends AdminBaseController
 
 	public function uploadImages()
     {
-		$accepted_origins = array("http://localhost:8080", "https://indrajatim.com/");
+		$accepted_origins = array("http://localhost:8080", "https://indrajatim.com/", "https://indrajatim.id/");
         $imgFolder = "./assets/admin/upload/thread/";
 		reset($_FILES);
 		$tmp = current($_FILES);
