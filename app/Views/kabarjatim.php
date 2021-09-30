@@ -16,7 +16,7 @@
 						</div>                    
 						<div class="post-item-description">                        
 							<span class="post-meta-date"><i class="fa fa-calendar"></i><?= date('d-m-Y', strtotime($data['tanggal']));?></span>
-							<span class="post-meta-comments"><i class="fa fa-user"></i>By Admin</span>                        
+							<!-- <span class="post-meta-comments"><i class="fa fa-user"></i>By Admin</span> -->                       
 							<h2 style="font-size:13px;"><a href="<?= base_url('kabarjatim/detail/'.$data['slug']);?>"><?= $data['judul'];?></a></h2>
 							<a href="<?= base_url('kabarjatim/detail/'.$data['slug']);?>" class="item-link">Read More <i class="icon-chevron-right"></i></a>
 						</div>                
