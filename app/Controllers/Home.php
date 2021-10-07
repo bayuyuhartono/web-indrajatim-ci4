@@ -27,7 +27,6 @@ class Home extends BaseController
 			'kategori' => $this->admin->getkategori(),
 			'gambar' => (isset($slide[0]['gambar'])) ? $slide[0]['gambar'] : "",
 			'list_berita' => $this->admin->getberita("where tanggal <= NOW() order by tanggal DESC LIMIT 6 "),
-			'list_hariini' => $this->admin->getberita("where tanggal <= NOW() order by tanggal DESC LIMIT 6 "),
 			'no_telp' => (isset($contact[0]['no_telp'])) ? $contact[0]['no_telp'] : "",
 			'email' => (isset($contact[0]['email'])) ? $contact[0]['email'] : "",
 			'alamat' => (isset($contact[0]['alamat'])) ? $contact[0]['alamat'] : "",

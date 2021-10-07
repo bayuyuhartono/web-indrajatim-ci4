@@ -6380,7 +6380,7 @@ h6.font-parisienne {
 .post-item .post-item-description>h2>a {
     font-size: 14px;
     letter-spacing: -.1px;
-    line-height: 23px;
+    line-height: 17px;
     margin-bottom: 16px;
     color: #444;
     font-weight: 600
@@ -20486,6 +20486,19 @@ body[data-bg-image] {
     padding-bottom: 5px;
 }
 
+@media only screen and (max-width: 1400px) {
+    #header .header-inner #logo a>img, #header .header-inner #logo a [class*=logo-], #header #header-wrap #logo a>img, #header #header-wrap #logo a [class*=logo-] {
+        margin-top: 28px;
+        height: 23px;
+    }
+}
+
+/* @media only screen and (max-width: 1380px) {
+    #mainMenu nav>ul>li>a {
+        font-size: 10px;
+    }
+} */
+
 @media only screen and (max-width: 600px) {
     .tile-img {
         width: 135px;
@@ -20538,5 +20551,31 @@ body[data-bg-image] {
 
     #mainMenu-trigger {
         height: 85px;
+    }
+
+    #header .header-inner #logo a>img, #header .header-inner #logo a [class*=logo-], #header #header-wrap #logo a>img, #header #header-wrap #logo a [class*=logo-] {
+        margin-top: 28px;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    #header .header-inner #logo a, #header .header-inner #logo a span, #header #header-wrap #logo a, #header #header-wrap #logo a span {
+        margin-left: -15px;
+    }
+
+    #header .header-inner #logo a>img, #header .header-inner #logo a [class*=logo-], #header #header-wrap #logo a>img, #header #header-wrap #logo a [class*=logo-] {
+        display: block;
+        margin-top: 30px;
+        width: 94%;
+        height: 26px;
+    }
+
+    .cards {
+        display: block;
+    }
+
+    .grid-thumbnail {
+        min-width: 230px;
+        height: 165px;
     }
   }

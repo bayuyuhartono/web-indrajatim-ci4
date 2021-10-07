@@ -168,7 +168,7 @@
                         <div class="bg-overlay"></div>
                         <div class="container">
                             <div class="slide-captions text-left text-light">
-                                <h1><a href="<?= base_url($kategori_name.'/detail/'.$data['slug']);?>"><?= $data['judul'];?></a></h1> 
+                                <h1><a href="<?= base_url(strtolower(str_replace(' ','',$kategori_name)).'/detail/'.$data['slug']);?>"><?= $data['judul'];?></a></h1> 
                                 <!-- <p class="text-small">Sub Judul</p> -->
                             </div>
                         </div>

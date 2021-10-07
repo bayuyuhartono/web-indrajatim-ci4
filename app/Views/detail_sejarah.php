@@ -5,9 +5,12 @@
             <div class="content col-lg-12">
                 <?php foreach ($image_banneratas as $data) { ?>
                     <?php if($data['status'] == 1) { ?>
-                        <img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;">
-                    <?php }else{ ?> 
-                    <?php } ?>  
+						<?php if($data['judul'] == '-') { ?>	
+							<img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;">
+						<?php }else{ ?>	
+							<a href="<?php echo $data['judul'] ?>"><img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;"></a>
+						<?php } ?>	
+					<?php } ?> 
                 <?php } ?>
             </div>
         </div>
@@ -33,9 +36,12 @@
                                     <p><?= $content;?></p>
                                     <?php foreach ($image_bannerbawah as $data) { ?>
                                         <?php if($data['status'] == 1) { ?>
-                                            <img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;">
-                                        <?php }else{ ?>
-                                        <?php } ?>  
+						<?php if($data['judul'] == '-') { ?>	
+							<img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;">
+						<?php }else{ ?>	
+							<a href="<?php echo $data['judul'] ?>"><img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;"></a>
+						<?php } ?>	
+					<?php } ?> 
                                     <?php } ?>
                                 </div>
                                 <div class="comments" id="comments" style="display:none;">
@@ -149,9 +155,12 @@
                                     <p><?= $content;?></p>
                                     <?php foreach ($image_bannerbawah as $data) { ?>
                                         <?php if($data['status'] == 1) { ?>
-                                            <img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;">
-                                        <?php }else{ ?>
-                                        <?php } ?>  
+						<?php if($data['judul'] == '-') { ?>	
+							<img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;">
+						<?php }else{ ?>	
+							<a href="<?php echo $data['judul'] ?>"><img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;"></a>
+						<?php } ?>	
+					<?php } ?> 
                                     <?php } ?>
                                 </div>
                                 <div class="comments" id="comments" style="display:none;">
@@ -193,9 +202,12 @@
                     <div class="widget" data-username="envato" data-limit="2">
                         <?php foreach ($image_bannerkanan as $data) { ?>
                             <?php if($data['status'] == 1) { ?>
-                                <img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;">
-                            <?php }else{ ?>
-                            <?php } ?>  
+						<?php if($data['judul'] == '-') { ?>	
+							<img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;">
+						<?php }else{ ?>	
+							<a href="<?php echo $data['judul'] ?>"><img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;"></a>
+						<?php } ?>	
+					<?php } ?> 
                         <?php } ?>
                     </div>
                 </div>

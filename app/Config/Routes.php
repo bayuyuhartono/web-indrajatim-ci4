@@ -44,6 +44,7 @@ $routes->group('admin', ['filter' => 'authadminfilter'], function($routes) {
 	$routes->get('berita/edit_data/:id_berita', 'Admin/Berita::edit_data');
 	$routes->post('berita/actionedit/:id_berita', 'Admin/Berita::actionedit');
 	$routes->get('berita/actiondelete/:id_berita', 'Admin/Berita::actiondelete');
+	$routes->post('berita/uploadimages', 'Admin/Berita::uploadImages');
 
 	$routes->get('penulis', 'Admin/Penulis::index');
 	$routes->get('penulis/tambah_data', 'Admin/Penulis::tambah_data');

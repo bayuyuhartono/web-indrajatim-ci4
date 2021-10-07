@@ -53,16 +53,16 @@ class Banner extends AdminBaseController
 		// );
 		// $this->load->library('upload', $config);
 
-		if (!$this->request->getPost('gambar')) 
+		if (!$_FILES["gambar"]["name"])
 		{
 			$id_banner = $this->request->getPost('id');
 			$data = array(
 				'judul'  			=> $this->request->getPost('judul'),
 				'status'  			=> $this->request->getPost('status'),
 			);
-			$id = $this->db->where('id', $id_banner);
-			$query = $this->db->get('tbl_banner');
-			$row = $query->row();
+			// $id = $this->db->where('id', $id_banner);
+			// $query = $this->db->get('tbl_banner');
+			// $row = $query->row();
 			$this->global->UpdateData('tbl_banner', $data, array('id' => $id_banner));
 			session()->setFlashdata('success', 'Data Berhasil di Edit');
 			return redirect()->back();
@@ -79,10 +79,10 @@ class Banner extends AdminBaseController
 				'status'  			=> $this->request->getPost('status'),
 				'gambar'   			=> $new_name,
 			);
-			$id = $this->db->where('id', $id_banner);
-			$query = $this->db->get('tbl_banner');
-			$row = $query->row();
-			unlink("./assets/admin/upload/banner/$row->gambar");
+			// $id = $this->db->where('id', $id_banner);
+			// $query = $this->db->get('tbl_banner');
+			// $row = $query->row();
+			// unlink("./assets/admin/upload/banner/$row->gambar");
 			$this->global->UpdateData('tbl_banner', $data, array('id' => $id_banner));
 			session()->setFlashdata('success', 'Data Berhasil di Edit');
 			return redirect()->back();

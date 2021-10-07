@@ -14,7 +14,7 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label>Judul</label>
+                      <label>Link</label>
                       <input type="hidden" name="id" class="form-control" value="<?= $id;?>">
                       <input type="text" name="judul" class="form-control" value="<?= $judul;?>">
                     </div>

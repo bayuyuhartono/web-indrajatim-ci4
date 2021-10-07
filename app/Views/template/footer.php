@@ -6,9 +6,9 @@
 					<div class="widget widget-contact-us" style="background-image: url('<?= base_url();?>assets/temp/images/world-map-dark.png'); background-position: 50% 20px; background-repeat: no-repeat">                        
 						<h4>INDRA JATIM</h4>                        
 						<ul class="list-icon">                            
-							<li style="text-align:left;"><i class="fa fa-map-marker-alt"></i> <?= $alamat;?></li>                            
-							<li><i class="fa fa-phone"></i> <?= $no_telp;?></li>                            
-							<li><i class="far fa-envelope"></i> <?= $email;?></li>                        
+							<li style="text-align:left;"><i class="fa fa-map-marker-alt"></i> Jl. Medokan Asri Barat No.22, Medokan Ayu Kec. Rungkut, Surabaya Jawa Timur 60295</li>                            
+							<li><i class="fa fa-phone"></i> 0812-5915-9656</li>                            
+							<li><i class="far fa-envelope"></i> indrajatimdotcom@gmail.com</li>                        
 						</ul>                    
 					</div>                
 				</div>                      

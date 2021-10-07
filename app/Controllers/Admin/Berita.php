@@ -140,7 +140,7 @@ class Berita extends AdminBaseController
 			$tag .= $value;
 		}
 
-		if (!$this->request->getPost('gambar')) 
+		if (!$_FILES["gambar"]["name"]) 
 		{
 			$id_berita = $this->request->getPost('id_berita');
 			$data = array(
@@ -159,7 +159,7 @@ class Berita extends AdminBaseController
 			// $row = $query->row();
 			$this->global->UpdateData('tbl_berita', $data, array('id_berita' => $id_berita));
 			session()->setFlashdata('success', 'Data Berhasil di Edit');
-			return redirect()->back();
+			return redirect()->to(site_url('/admin/berita')); 
 		}else{
 			$dataBerkas = $this->request->getFile('gambar');
 			$image = \Config\Services::image()
@@ -187,7 +187,7 @@ class Berita extends AdminBaseController
 			
 			$this->global->UpdateData('tbl_berita', $data, array('id_berita' => $id_berita));
 			session()->setFlashdata('success', 'Data Berhasil di Edit');
-			return redirect()->back();
+			return redirect()->to(site_url('/admin/berita')); 
 		} 
 	}
 
@@ -208,15 +208,14 @@ class Berita extends AdminBaseController
 		reset($_FILES);
 		$tmp = current($_FILES);
 		if(is_uploaded_file($tmp['tmp_name'])){
-			if(isset($_SERVER['HTTP_ORIGIN'])){
-				if(in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)){
+			// if(isset($_SERVER['HTTP_ORIGIN'])){
+			// 	if(in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)){
 					header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
-					return $this->response->setJSON(array('message'=>'http Error'));
-				}else{
-					header("HTTP/1.1 403 Origin Denied");
-					return;
-				}
-			}
+			// 	}else{
+			// 		header("HTTP/1.1 403 Origin Denied");
+			// 		return $this->response->setJSON(array('message'=>'Origin Denied '.$_SERVER['HTTP_ORIGIN']));
+			// 	}
+			// }
 			// check valid file name
 			if(preg_match("/([^\w\s\d\-_~,;:\[\]\(\).])|([\.]{2,})/", $tmp['name'])){
 				header("HTTP/1.1 400 Invalid file name.");
