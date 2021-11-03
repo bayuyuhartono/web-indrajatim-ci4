@@ -150,7 +150,7 @@ class Berita extends AdminBaseController
 				'content'  	 		=> $this->request->getPost('content'),
 				'caption'  	 		=> $this->request->getPost('caption'),
 				'slide'  	 		=> $this->request->getPost('slide'),
-				'tanggal'   		=> date('Y-m-d', strtotime($this->request->getPost('tanggal'))).' '.$jam,
+				'tanggal'   		=> date($this->request->getPost('tanggal')).' '.$jam, 
 				'tanggal_diubah'   		=> date('Y-m-d H:i:s').' '.$jam,
 				'tag'				=> $tag,
 			);

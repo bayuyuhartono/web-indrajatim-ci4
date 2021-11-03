@@ -29,7 +29,7 @@
                                 <div class="post-item-description">
                                     <span><?= $caption;?></span>
                                     <div class="post-meta">
-                                        <span class="post-meta-date"><i class="fa fa-calendar"></i><?= format_indo($tanggal);?> <?= date('d-m-Y', strtotime($tanggal));?></span>  
+                                        <span class="post-meta-date"><i class="fa fa-calendar"></i><?= date('d-m-Y', strtotime($tanggal));?></span>  
                                         <span class="post-meta-comments"><a href="#respond"><i class="fa fa-comments"></i><?= $countkomentar;?> Comments</a></span>
                                         <span class="post-meta-category"><i class="fa fa-tag"></i>Kategori, <?= $kategori;?></span>
                                     </div>
@@ -108,7 +108,7 @@
                                                     <img alt="" src="<?= base_url('assets/admin/upload/berita/'.$data['gambar']);?>">
                                                     <div class="post-thumbnail-content">
                                                         <a href="<?= base_url('advertorial/detail/'.$data['slug']);?>"><?= $data['judul'];?></a>
-                                                        <span class="post-date"><i class="icon-clock"></i> <?= date('d-m-Y', strtotime($data['tanggal']));?></span>
+                                                        <span class="post-date"><i class="icon-clock"></i> <?= date('d-m-Y', strtotime($tanggal));?></span>
                                                         <span class="post-category"><i class="fa fa-tag"></i> <?= $data['kategori'];?></span>
                                                     </div>
                                                 </div>
@@ -142,7 +142,7 @@
                                 <div class="post-item-description">
                                     <span><?= $caption;?></span>
                                     <div class="post-meta">
-                                        <span class="post-meta-date"><i class="fa fa-calendar"></i><?= format_indo($tanggal);?> <?= date('d-m-Y', strtotime($tanggal));?></span>  
+                                        <span class="post-meta-date"><i class="fa fa-calendar"></i><?= date('d-m-Y', strtotime($tanggal));?></span>  
                                         <span class="post-meta-comments"><a href="#respond"><i class="fa fa-comments"></i><?= $countkomentar;?> Comments</a></span>
                                         <span class="post-meta-category"><i class="fa fa-tag"></i>Kategori, <?= $kategori;?></span>
                                     </div>
@@ -177,7 +177,7 @@
                                                 <img alt="" src="<?= base_url('assets/admin/upload/berita/'.$data['gambar']);?>">
                                                 <div class="post-thumbnail-content">
                                                     <a href="<?= base_url('advertorial/detail/'.$data['slug']);?>"><?= $data['judul'];?></a>
-                                                    <span class="post-date"><i class="icon-clock"></i> <?= date('d-m-Y', strtotime($data['tanggal']));?></span>
+                                                    <span class="post-date"><i class="icon-clock"></i> <?= date('d-m-Y', strtotime($tanggal));?></span>
                                                     <span class="post-category"><i class="fa fa-tag"></i> <?= $data['kategori'];?></span>
                                                 </div>
                                             </div>

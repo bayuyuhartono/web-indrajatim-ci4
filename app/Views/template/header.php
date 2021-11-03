@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id-ID">
 <head>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -25,8 +25,9 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="INDRA JATIM" />
     <meta name="description" content="<?= isset($caption) ? $caption : 'Berita terkini dan terbaru dari Jawa Timur mengenai politik, budaya, sejarah, hiburan dan informasi masyarakat.';?>">
-    <meta name="keyword" content="<?= isset($tag) ? $tag : 'berita terkini, berita jatim, berita politik, berita terbaru, berita hari ini, budaya';?>">
-    <meta name="news_keyword" content="<?= isset($tag) ? $tag : 'berita terkini, berita jatim, berita politik, berita terbaru, berita hari ini, budaya';?>">
+    <meta name="keywords" content="<?= isset($tag) ? $tag : 'berita terkini, berita jatim, berita politik, berita terbaru, berita hari ini, budaya';?>">
+    <meta name="news_keywords" content="<?= isset($tag) ? $tag : 'berita terkini, berita jatim, berita politik, berita terbaru, berita hari ini, budaya';?>">
+    <meta content='id' name='language'/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="googlebot" content="index, follow" />
@@ -46,6 +47,7 @@
     <meta property="og:site_name" content="INDRAJATIM.com" />
 
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image:alt" content="Indrajatim">
     <meta name="twitter:site" content="@indrajatimcom" />
     <meta name="twitter:creator" content="@indrajatimcom">
     <meta name="twitter:title" content="<?= isset($judul_berita) ? $judul_berita : 'Berita Terkini Jawa Timur';?> - indrajatim.com">
@@ -125,7 +127,7 @@
                     <div id="logo">
                         <a href="<?= base_url('home');?>">
                             <!-- <span class="logo-default"><?= $subtitle;?></span> -->
-                            <img src="<?= base_url('assets/indrajatim_assets/logoindrajatimcom.png');?>" alt="">
+                            <img src="<?= base_url('assets/indrajatim_assets/logoindrajatim.png');?>" alt="">
                         </a>
                     </div>
                     <div id="mainMenu-trigger">

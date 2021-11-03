@@ -4930,7 +4930,7 @@ h6.font-parisienne {
 #slider {
     position: relative;
     width: 100%;
-    height:500px;
+    height:700px;
     overflow: hidden;
     padding: 0;
     background-color: #fff;
@@ -4996,7 +4996,7 @@ h6.font-parisienne {
     .inspiro-slider .slide .slide-captions h1,
     .inspiro-slider .slide .slide-captions h2 {
         font-size: 40px;
-        line-height: 40px;
+        line-height: 20px;
         margin-bottom: 14px
     }
 
@@ -6381,7 +6381,7 @@ h6.font-parisienne {
     font-size: 14px;
     letter-spacing: -.1px;
     line-height: 17px;
-    margin-bottom: 16px;
+    margin-bottom: 5px;
     color: #444;
     font-weight: 600
 }
@@ -18352,7 +18352,7 @@ screen and (max-height:300px) {
 
 .list-icon i {
     font-size: 15px;
-    margin-right: 14px;
+    margin-right: 5px;
     margin-left: -20px
 }
 
@@ -20457,7 +20457,7 @@ body[data-bg-image] {
 }
 
 .lazy-bg {
-    background-size: cover !important;
+    background-size: 100% 100% !important;
 }
 
 .loading-bar {
@@ -20489,7 +20489,15 @@ body[data-bg-image] {
 @media only screen and (max-width: 1400px) {
     #header .header-inner #logo a>img, #header .header-inner #logo a [class*=logo-], #header #header-wrap #logo a>img, #header #header-wrap #logo a [class*=logo-] {
         margin-top: 28px;
-        height: 23px;
+        height: 30px;
+    }
+}
+@media only screen and (max-width: 1280px) {
+    .fadeInUp {
+        line-height: 25px !important;
+    }
+    #slider {
+        height:500px;
     }
 }
 
@@ -20555,6 +20563,25 @@ body[data-bg-image] {
 
     #header .header-inner #logo a>img, #header .header-inner #logo a [class*=logo-], #header #header-wrap #logo a>img, #header #header-wrap #logo a [class*=logo-] {
         margin-top: 28px;
+    }
+
+    #slider {
+        height:300px;
+        margin-bottom: 20px;
+    }
+
+    .fadeInUp {
+        font-size: 22px !important;
+    }
+    .inspiro-slider .slide .container,
+    .inspiro-slider .slide .container-wide {
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 270px;
+    }
+
+    .slide-captions h1 {
+        margin-bottom: 0px !important;
     }
   }
 

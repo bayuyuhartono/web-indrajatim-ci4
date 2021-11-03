@@ -6,7 +6,7 @@
             </a>
             <div class='tile-info'>
                 <span class="post-meta-date"><i class="fa fa-calendar"></i><?= date('d-m-Y', strtotime($data['tanggal']));?></span>                        
-                <span class="post-meta-comments"><i class="fa fa-user"></i>By Admin</span>
+                <!-- <span class="post-meta-comments"><i class="fa fa-user"></i>By Admin</span> -->
                 <a href="<?= base_url(str_replace(' ', '', $kategori_name).'/detail/'.$data['slug']);?>">  
                     <h2 class="block-ellipsis"><?= $data['judul'];?></h2>
                 </a>
