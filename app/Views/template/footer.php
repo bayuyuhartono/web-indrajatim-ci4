@@ -16,11 +16,11 @@
 					<div class="widget" id=>                    
 						<h4>FOLLOW US</h4>                    
 						<ul class="list social-icons social-icons-colored">                        
-							<li class="social-instagram"><a href="<?= $socmed_satu;?>" target="__blank"><img src="<?= base_url('assets/admin/upload/socmed/'.$img_socmedsatu);?>"></a></li>                        
-							<li class="social-facebook"><a href="<?= $socmed_dua;?>" target="__blank"><img src="<?= base_url('assets/admin/upload/socmed/'.$img_socmeddua);?>"></a></li>                        
-							<li class="social-youtube"><a href="<?= $socmed_tiga;?>" target="__blank"><img src="<?= base_url('assets/admin/upload/socmed/'.$img_socmedtiga);?>"></a></li>                    
-							<li class="social-twitter"><a href="<?= $socmed_empat;?>" target="__blank"><img src="<?= base_url('assets/admin/upload/socmed/'.$img_socmedempat);?>"></a></li>
-							<li class="social-tiktok"><a href="<?= $socmed_lima;?>" target="__blank"><img src="<?= base_url('assets/admin/upload/socmed/'.$img_socmedlima);?>"></a></li>
+							<li><a href="<?= $socmed_satu;?>" target="__blank"><img src="<?= base_url('assets/other/Instagram.svg');?>" style="vertical-align: baseline;"></a></li>        
+							<li><a href="<?= $socmed_dua;?>" target="__blank"><img src="<?= base_url('assets/other/Facebook.svg');?>" style="vertical-align: baseline;"></a></li>        
+							<li><a href="<?= $socmed_tiga;?>" target="__blank"><img src="<?= base_url('assets/other/Youtube.svg');?>" style="vertical-align: baseline;"></a></li>        
+							<li><a href="<?= $socmed_empat;?>" target="__blank"><img src="<?= base_url('assets/other/Twitter.svg');?>" style="vertical-align: baseline;"></a></li>        
+							<li><a href="<?= $socmed_lima;?>" target="__blank"><img src="<?= base_url('assets/other/Tiktok.svg');?>" style="vertical-align: baseline;"></a></li>        
 						</ul>                
 					</div>            
 				</div>             
