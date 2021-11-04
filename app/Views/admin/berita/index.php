@@ -14,31 +14,18 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table id="list-data-table" class="table table-striped table-bordered table-hover">
+                <table id="listdatatable" class="table table-striped table-bordered table-hover">
                   <thead>
                     <tr>
                       <th class="text-center">No</th>
-                      <th>Kategori</th>
                       <th>Gambar</th>
+                      <th>Kategori</th>
                       <th>Judul</th>
                       <th>Tanggal</th>
                       <th width="50">#</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <?php $no=1; foreach ($list_berita as $data) { ?>
-                      <tr>
-                        <td class="text-center"><?= $no;?></td>
-                        <td><?= $data['kategori'];?></td>
-                        <td><img src="<?= base_url('assets/admin/upload/berita/'.$data['gambar']);?>" width="58" height="58"></td>
-                        <td><?= $data['judul'];?></td>
-                        <td><?= date('d-m-Y', strtotime($data['tanggal']));?></td>
-                        <td>
-                          <button class="btn btn-sm btn-primary mb-2"><a class="text-white" href="<?= base_url('admin/berita/edit_data/'.$data['id_berita']);?>">Edit</a></button>
-                          <button class="btn btn-sm btn-danger" onclick="return confirm('Yakin mau delete data ini?')"><a class="text-white" href="<?= base_url('admin/berita/actiondelete/'.$data['id_berita']);?>">Delete</a></button> 
-                        </td>
-                      </tr>   
-                    <?php $no++; } ?>  
+                  <tbody> 
                   </tbody>
                 </table>
               </div>
@@ -50,7 +37,25 @@
   </section>
 </div>
 <?= $this->include('admin/template/footer'); ?>
-
+  
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.23/datatables.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var table = $('#listdatatable').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "order": [],
+        "ajax": {
+          "url": "<?php echo base_url('admin/berita/ajax_list')?>",
+          "type": "POST"
+        },
+        "columnDefs": [{
+          "targets": [],
+          "orderable": false,
+        }, ],
+      });
+    });
+  </script>
 
 
 
