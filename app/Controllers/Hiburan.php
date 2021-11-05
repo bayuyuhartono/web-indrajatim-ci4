@@ -75,6 +75,7 @@ class Hiburan extends BaseController
 			'img_socmedlima' => (isset($socmed_lima[0]['gambar'])) ? $socmed_lima[0]['gambar'] : "",
 			'id_berita' => (isset($detail[0]['id_berita'])) ? $detail[0]['id_berita'] : "",
 			'judul_berita' => (isset($detail[0]['judul'])) ? $detail[0]['judul'] : "",
+			'judul_gambar' => (isset($detail[0]['judul_gambar'])) ? $detail[0]['judul_gambar'] : "",
 			'caption' => (isset($detail[0]['caption'])) ? $detail[0]['caption'] : "",
 			'tag' => (isset($detail[0]['tag'])) ? $detail[0]['tag'] : "",
 			'content' => (isset($detail[0]['content'])) ? $detail[0]['content'] : "",

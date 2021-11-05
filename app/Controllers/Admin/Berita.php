@@ -79,6 +79,7 @@ class Berita extends AdminBaseController
             'tanggal_dibuat' => date('Y-m-d H:i:s') . ' ' . $jam,
             'content' => $this->request->getPost('content'),
             'caption' => $this->request->getPost('caption'),
+            'judul_gambar' => $this->request->getPost('judul_gambar'),
             'slide' => $this->request->getPost('slide'),
             'gambar' => $new_name,
             'tag' => $tag,
@@ -107,6 +108,7 @@ class Berita extends AdminBaseController
             'tanggal_diubah' => date('Y-m-d H:i:s'),
             'content' => (isset($berita[0]['content'])) ? $berita[0]['content'] : "",
             'caption' => (isset($berita[0]['caption'])) ? $berita[0]['caption'] : "",
+            'judul_gambar' => (isset($berita[0]['judul_gambar'])) ? $berita[0]['judul_gambar'] : "",
             'tag' => $tag,
             'slide' => (isset($berita[0]['slide'])) ? $berita[0]['slide'] : "0",
             'list_kategori' => $this->admin->getkategori(),
@@ -153,6 +155,7 @@ class Berita extends AdminBaseController
                 'tanggal' => date($this->request->getPost('tanggal')) . ' ' . $jam,
                 'tanggal_diubah' => date('Y-m-d H:i:s') . ' ' . $jam,
                 'tag' => $tag,
+                'judul_gambar' => $this->request->getPost('judul_gambar'),
             );
             // $id = $this->db->where('id_berita', $id_berita);
             // $query = $this->db->get('tbl_berita');
@@ -183,6 +186,7 @@ class Berita extends AdminBaseController
                 'tanggal_diubah' => date('Y-m-d H:i:s') . ' ' . $jam,
                 'gambar' => $new_name,
                 'tag' => $tag,
+                'judul_gambar' => $this->request->getPost('judul_gambar'),
             );
 
             $this->global->UpdateData('tbl_berita', $data, array('id_berita' => $id_berita));

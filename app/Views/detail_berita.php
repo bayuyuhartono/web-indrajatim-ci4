@@ -25,6 +25,12 @@
                                     <a href="#">
                                         <img alt="" src="<?= base_url('assets/admin/upload/berita/'.$gambar_berita);?>">
                                     </a>
+                                    <? if ($judul_gambar) { ?>
+                                        <span><?= $judul_gambar;?></span>
+                                    <? } ?>
+                                    <? if ($judul_gambar) { ?>
+                                        <span><?= $judul_gambar;?></span>
+                                    <? } ?>
                                 </div>
                                 <div class="post-item-description">
                                     <span><?= $caption;?></span>
@@ -144,6 +150,12 @@
                                     <a href="#">
                                         <img alt="" src="<?= base_url('assets/admin/upload/berita/'.$gambar_berita);?>">
                                     </a>
+                                    <? if ($judul_gambar) { ?>
+                                        <span><?= $judul_gambar;?></span>
+                                    <? } ?>
+                                    <? if ($judul_gambar) { ?>
+                                        <span><?= $judul_gambar;?></span>
+                                    <? } ?>
                                 </div>
                                 <div class="post-item-description">
                                     <span><?= $caption;?></span>

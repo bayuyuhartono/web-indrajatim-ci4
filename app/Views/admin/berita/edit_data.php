@@ -31,6 +31,12 @@
                       <input type="file" name="gambar" class="form-control">
                     </div>
                   </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Judul Gambar</label>
+                      <input type="text" name="judul_gambar" class="form-control judul_gambar" value="<?= $judul_gambar;?>">
+                    </div>
+                  </div>  
                   <div class="col-md-5">
                     <div class="form-group"> 
                       <label>Kategori</label>
@@ -56,12 +62,6 @@
 											</select>                    
 										</div>
                   </div> 
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Caption</label>
-                      <textarea type="text" name="caption" class="form-control" rows="4" cols="50"><?= $caption;?></textarea>
-                    </div>
-                  </div>
                   <div class="col-md-5">               
                     <div class="form-group">                      
 											<label>Tag</label>                      
@@ -72,6 +72,12 @@
 											</select>                    
 										</div>
                   </div> 
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Caption</label>
+                      <textarea type="text" name="caption" class="form-control" rows="4" cols="50"><?= $caption;?></textarea>
+                    </div>
+                  </div>
                 </div>  
                 <div class="row">
                   <div class="col-md-12">
