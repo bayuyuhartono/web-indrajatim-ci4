@@ -25,12 +25,14 @@
                                     <a href="#">
                                         <img alt="" src="<?= base_url('assets/admin/upload/berita/'.$gambar_berita);?>">
                                     </a>
-                                    <? if ($judul_gambar) { ?>
+                                    <? if ($judul_gambar && trim($judul_gambar) != '-') { ?>
                                         <span><?= $judul_gambar;?></span>
                                     <? } ?>
                                 </div>
                                 <div class="post-item-description">
-                                    <span><?= $caption;?></span> 
+                                    <? if ($judul_gambar && trim($judul_gambar) != '-') {} else{ ?>
+                                        <span><?= $caption;?></span>
+                                    <? } ?>
                                     <div class="post-meta">
                                         <span class="post-meta-date"><i class="fa fa-calendar"></i><?= date('d-m-Y', strtotime($tanggal));?></span>  
                                         <span class="post-meta-comments"><a href="#respond"><i class="fa fa-comments"></i><?= $countkomentar;?> Comments</a></span>
@@ -141,12 +143,14 @@
                                     <a href="#">
                                         <img alt="" src="<?= base_url('assets/admin/upload/berita/'.$gambar_berita);?>">
                                     </a>
-                                    <? if ($judul_gambar) { ?>
+                                    <? if ($judul_gambar && trim($judul_gambar) != '-') { ?>
                                         <span><?= $judul_gambar;?></span>
                                     <? } ?>
                                 </div>
                                 <div class="post-item-description">
-                                    <span><?= $caption;?></span> 
+                                    <? if ($judul_gambar && trim($judul_gambar) != '-') {} else{ ?>
+                                        <span><?= $caption;?></span>
+                                    <? } ?> 
                                     <div class="post-meta">
                                         <span class="post-meta-date"><i class="fa fa-calendar"></i><?= date('d-m-Y', strtotime($tanggal));?></span>  
                                         <span class="post-meta-comments"><a href="#respond"><i class="fa fa-comments"></i><?= $countkomentar;?> Comments</a></span>

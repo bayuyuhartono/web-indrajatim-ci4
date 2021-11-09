@@ -38,6 +38,9 @@ class Sejarah extends BaseController
 			'img_socmedlima' => (isset($socmed_lima[0]['gambar'])) ? $socmed_lima[0]['gambar'] : "",
 			'list_sejarah' => $this->admin->getberita("where kategori='Sejarah' AND tanggal <= NOW() order by tanggal DESC limit 12 "),
 			'list_slide' => $this->admin->getberita("where kategori='Sejarah' AND tanggal <= NOW() AND slide='1' order by tanggal DESC limit 3 "),
+			'image_banneratas' => $this->admin->getbanner("where posisi='Atas' and status='1' "),
+			'image_bannerkanan' => $this->admin->getbanner("where posisi='Kanan' and status='1' "),
+			'image_bannerbawah' => $this->admin->getbanner("where posisi='Bawah' and status='1' "),
 			'kategori_name' => 'sejarah',
 		);
 		return view('viewdata', $data);

@@ -6510,7 +6510,8 @@ h6.font-parisienne {
 
 .single-post .post-item img {
     width: 100%;
-    height: auto
+    height: auto;
+    margin-bottom: 10px;
 }
 
 .single-post .post-item .post-item-description {
@@ -20605,4 +20606,10 @@ body[data-bg-image] {
         min-width: 230px;
         height: 165px;
     }
+  }
+
+  .post-image span {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
   }

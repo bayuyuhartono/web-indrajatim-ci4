@@ -39,7 +39,10 @@ class Budaya extends BaseController
 			'list_budaya' => $this->admin->getberita("where kategori='Budaya' AND tanggal <= NOW() order by tanggal DESC limit 12 "),
 			'list_slide' => $this->admin->getberita("where kategori='Budaya' AND tanggal <= NOW() AND slide='1' order by tanggal DESC limit 3 "),
 			'kategori_name' => 'budaya',
-			'caption' => 'Kumpulan informasi dari pegiat budaya dan kreatif di Indonesia',
+			'image_banneratas' => $this->admin->getbanner("where posisi='Atas' and status='1' "),
+			'image_bannerkanan' => $this->admin->getbanner("where posisi='Kanan' and status='1' "),
+			'image_bannerbawah' => $this->admin->getbanner("where posisi='Bawah' and status='1' "),
+ 'caption' => 'Kumpulan informasi dari pegiat budaya dan kreatif di Indonesia',
 		);
 		return view('viewdata', $data);
 	}

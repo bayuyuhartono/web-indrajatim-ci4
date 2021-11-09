@@ -39,6 +39,9 @@ class Advertorial extends BaseController
 			'img_socmedlima' => (isset($socmed_lima[0]['gambar'])) ? $socmed_lima[0]['gambar'] : "",
 			'list_advertorial' => $this->admin->getberita("where kategori='Advertorial' AND tanggal <= NOW() order by tanggal DESC limit 12 "),
 			'list_slide' => $this->admin->getberita("where kategori='Advertorial' AND tanggal <= NOW() AND slide='1' order by tanggal DESC limit 3 "),
+			'image_banneratas' => $this->admin->getbanner("where posisi='Atas' and status='1' "),
+			'image_bannerkanan' => $this->admin->getbanner("where posisi='Kanan' and status='1' "),
+			'image_bannerbawah' => $this->admin->getbanner("where posisi='Bawah' and status='1' "),
 			'kategori_name' => 'advertorial',
 		);
 		return view('viewdata', $data);

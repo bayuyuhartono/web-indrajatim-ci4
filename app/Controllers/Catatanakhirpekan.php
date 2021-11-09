@@ -39,7 +39,10 @@ class Catatanakhirpekan extends BaseController
 			'list_catatanakhirpekan' => $this->admin->getberita("where kategori='Catatan Akhir Pekan' AND tanggal <= NOW() order by tanggal DESC limit 12 "),
 			'list_slide' => $this->admin->getberita("where kategori='Catatan Akhir Pekan' AND tanggal <= NOW() AND slide='1' order by tanggal DESC limit 3 "),
 			'kategori_name' => 'catatan akhir pekan',
-			'caption' => 'Catatan akhir pekan',
+			'image_banneratas' => $this->admin->getbanner("where posisi='Atas' and status='1' "),
+			'image_bannerkanan' => $this->admin->getbanner("where posisi='Kanan' and status='1' "),
+			'image_bannerbawah' => $this->admin->getbanner("where posisi='Bawah' and status='1' "),
+ 'caption' => 'Catatan akhir pekan',
 		);
 		return view('viewdata', $data);
 	}

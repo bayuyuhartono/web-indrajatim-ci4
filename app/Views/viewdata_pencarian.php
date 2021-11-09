@@ -43,22 +43,22 @@
 		$( ".grid-view-button" ).show();
 		$( ".list-view-button" ).hide();
 		$('.list-data-berita').empty();
-		getdata(0,'list');
+		offsetState = 0;
+		getdata(offsetState,'list');
 		$( ".list-data-berita" ).removeClass( "cards" );
 		$( "#viewbutton" ).removeClass( "fa fa-bars" );
 		$( "#viewbutton" ).addClass( "fa fa-th-large" );	
-		offsetState = 12;
 	});
 
 	$( ".grid-view-button" ).click(function() {
 		$( ".grid-view-button" ).hide();
 		$( ".list-view-button" ).show();
 		$('.list-data-berita').empty();
-		getdata(0,'grid');
+		offsetState = 0;		
+		getdata(offsetState,'grid');
 		$( ".list-data-berita" ).addClass( "cards" );
 		$( "#viewbutton" ).removeClass( "fa fa-th-large" );
 		$( "#viewbutton" ).addClass( "fa fa-bars" );
-		offsetState = 12;		
 	});
 
 	$( ".loadmore-button" ).click(function() {

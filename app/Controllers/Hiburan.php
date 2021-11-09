@@ -39,7 +39,10 @@ class Hiburan extends BaseController
 			'list_hiburan' => $this->admin->getberita("where kategori='Hiburan' AND tanggal <= NOW() order by tanggal DESC limit 12 "),
 			'list_slide' => $this->admin->getberita("where kategori='Hiburan' AND tanggal <= NOW() AND slide='1' order by tanggal DESC limit 3 "),
 			'kategori_name' => 'hiburan',
-			'caption' => 'Informasi mengenai hiburan keluarga maupun komunitas anak muda',
+			'image_banneratas' => $this->admin->getbanner("where posisi='Atas' and status='1' "),
+			'image_bannerkanan' => $this->admin->getbanner("where posisi='Kanan' and status='1' "),
+			'image_bannerbawah' => $this->admin->getbanner("where posisi='Bawah' and status='1' "),
+ 'caption' => 'Informasi mengenai hiburan keluarga maupun komunitas anak muda',
 		);
 		return view('viewdata', $data);
 	}
