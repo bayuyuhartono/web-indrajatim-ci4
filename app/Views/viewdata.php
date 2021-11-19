@@ -6,9 +6,9 @@
 				<?php foreach ($image_banneratas as $data) { ?>
 					<?php if($data['status'] == 1) { ?>
 						<?php if($data['judul'] == '-') { ?>	
-							<img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;">
+							<img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%; margin-bottom: 15px;">
 						<?php }else{ ?>	
-							<a href="<?php echo $data['judul'] ?>"><img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;"></a>
+							<a href="<?php echo $data['judul'] ?>" target="_blank"><img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%; margin-bottom:15px"></a>
 						<?php } ?>	
 					<?php } ?>	
 				<?php } ?>
@@ -40,9 +40,9 @@
 				<?php foreach ($image_bannerbawah as $data) { ?>
 					<?php if($data['status'] == 1) { ?>
 						<?php if($data['judul'] == '-') { ?>	
-							<img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;">
+							<img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%; margin-bottom: 15px;">
 						<?php }else{ ?>	
-							<a href="<?php echo $data['judul'] ?>"><img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%;"></a>
+							<a href="<?php echo $data['judul'] ?>" target="_blank"><img src="<?= base_url('assets/admin/upload/banner/'.$data['gambar']);?>" style="width:100%; height:105%; margin-bottom:15px"></a>
 						<?php } ?>	
 					<?php } ?>
 				<?php } ?>

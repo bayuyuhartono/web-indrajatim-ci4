@@ -1,4 +1,4 @@
-<?= $this->include('template/header');?>
+<?= $this->include('template/header2');?>
 <section id="page-content">
     <div class="container">
         <div class="row">

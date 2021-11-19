@@ -8,7 +8,7 @@
 						<ul class="list-icon">                            
 							<li style="text-align:left;"><i class="fa fa-map-marker-alt"></i> Jl. Medokan Asri Barat No.22, Medokan Ayu Kec. Rungkut, Surabaya Jawa Timur 60295</li>                            
 							<li><i class="fa fa-phone"></i> 0812-5915-9656</li>                            
-							<li><i class="far fa-envelope"></i> indrajatimdotcom@gmail.com</li>                        
+							<li><i class="far fa-envelope"></i> media@indrajatim.com</li>                        
 						</ul>                    
 					</div>                
 				</div>                      

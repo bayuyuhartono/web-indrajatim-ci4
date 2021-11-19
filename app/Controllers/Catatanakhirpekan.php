@@ -94,7 +94,7 @@ class Catatanakhirpekan extends BaseController
 			'image_banneratas' => $this->admin->getbanner("where posisi='Atas' and status='1' "),
 			'image_bannerkanan' => $this->admin->getbanner("where posisi='Kanan' and status='1' "),
 			'image_bannerbawah' => $this->admin->getbanner("where posisi='Bawah' and status='1' "),
-			'berita_hits' => $this->admin->getberita("order by count_hits DESC LIMIT 4 "),
+			'berita_hits' => $this->admin->getberita("where tanggal >= ADDDATE(NOW(), -14) AND tanggal < NOW() order by count_hits DESC LIMIT 4  "),
 		);
 		$this->admin->counthits($id);
 		return view('detail_catatanakhirpekan', $data);

@@ -56,9 +56,6 @@
     
     <meta name="google-site-verification" content="2wEnOD0KzP2P4JJj45kb9w9EgQfvf5pfWGCuhOIWOks" />
 
-    <!-- propeller ads  -->
-    <meta name="propeller" content="93490977d2ffec3fb57dca0cd67d62ce"> 
-
     <link rel="shortcut icon" href="<?= base_url('assets/indrajatim_assets/favicon_ijt1.ico');?>" />
     <link rel="canonical" href="<?= str_replace("index.php/","",current_url()); ?>" />
 
@@ -68,7 +65,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9619114306536943"
-    crossorigin="anonymous"></script>
+     crossorigin="anonymous"></script>
 
 </head>
 <style type="text/css">
@@ -166,21 +163,6 @@
                 </div>
             </div>
         </header>
-        <?php if (count($list_slide) > 0) { ?>
-            <div id="slider" class="inspiro-slider slider-fullscreen dots-creative" data-fade="true">
-                <?php foreach ($list_slide as $data) { ?>
-                    <div class="slide" data-bg-image="<?= base_url('assets/admin/upload/berita/'.$data['gambar']);?>">
-                        <div class="bg-overlay"></div>
-                        <div class="container">
-                            <div class="slide-captions text-left text-light">
-                                <h1><a href="<?= base_url(strtolower(str_replace(' ','',$kategori_name)).'/detail/'.$data['slug']);?>"><?= $data['judul'];?></a></h1> 
-                                <!-- <p class="text-small">Sub Judul</p> -->
-                            </div>
-                        </div>
-                    </div>
-                <?php } ?>    
-            </div>
-        <?php  } ?>
     </div>   
 
     <script>
