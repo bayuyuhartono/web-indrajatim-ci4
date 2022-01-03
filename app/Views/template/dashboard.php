@@ -321,13 +321,28 @@
 							<?php } ?>	
 						<?php } ?>
 					<?php } ?>
-				</div>        
+				</div>  
+				
+				<!-- Composite Start -->
+				<div id="M767596ScriptRootC1237294"></div>
+				<script src="https://jsc.mgid.com/i/n/indrajatim.com.1237294.js" async></script>
+				<!-- Composite End -->
+
 			</div>        
 		</div>    
 	</div>
 </section>
 <section id="page-content" class="home-bottom">    
 	<div class="container">        
+		
+		<!-- Composite Start -->
+		<div id="M767596ScriptRootC1237329">
+		</div>
+		<!-- <script src="https://jsc.mgid.com/i/n/indrajatim.com.1237329.js" async> -->
+		</script>
+		<!-- Composite End -->
+ 
+
 		<div class="row">
 			<div class="col-lg-12">
 				<?php foreach ($image_bannerbawah as $data) { ?>

@@ -20487,6 +20487,10 @@ body[data-bg-image] {
     padding-bottom: 5px;
 }
 
+.judulberita-h {
+    font-size: 30px !important;
+}
+
 @media only screen and (max-width: 1400px) {
     #header .header-inner #logo a>img, #header .header-inner #logo a [class*=logo-], #header #header-wrap #logo a>img, #header #header-wrap #logo a [class*=logo-] {
         margin-top: 28px;
@@ -20499,6 +20503,9 @@ body[data-bg-image] {
     }
     #slider {
         height:500px;
+    }
+    .judulberita-h {
+        font-size: 24px !important;
     }
 }
 

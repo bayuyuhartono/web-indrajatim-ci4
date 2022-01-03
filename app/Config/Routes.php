@@ -22,6 +22,8 @@ $routes->setAutoRoute(true);
 // sitemap 
 $routes->get('sitemap\.xml', 'SitemapController::index');
 $routes->get('(:any)/sitemap\.xml', 'SitemapController::kategori/$1');
+$routes->get('googlenews_sitemap\.xml', 'SitemapController::googlenews');
+
 // user routes 
 $routes->get('/', 'Home::index');
 $routes->get('pencarian', 'Pencarian::search');

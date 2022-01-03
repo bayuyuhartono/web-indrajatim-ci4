@@ -28,11 +28,19 @@ class SitemapController extends BaseController {
 		} else if ($kategori == 'kabarjatim') {
 			$kategori = 'kabar jatim';
 		}
-		$post = $this->admin->getberita("where kategori='".ucwords($kategori)."' order by tanggal_diubah DESC ");
+		$post = $this->admin->getberita("where kategori='".ucwords($kategori)."' order by tanggal DESC LIMIT 100 ");
         $data = [
             'post'   => $post,
         ];
 		return $this->response->setXML(view('sitemap/page_sitemap', $data));
+	}
+
+	public function googlenews(){
+		$post = $this->admin->getberita("where tanggal >= ADDDATE(NOW(), -10) AND tanggal < NOW() order by tanggal DESC ");
+        $data = [
+            'post'   => $post,
+        ];
+		return $this->response->setXML(view('sitemap/googlenews_sitemap', $data));
 	}
 }
 ?>

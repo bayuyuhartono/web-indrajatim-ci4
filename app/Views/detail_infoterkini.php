@@ -20,7 +20,7 @@
                     <div id="blog" class="single-post">
                         <div class="post-item">
                             <div class="post-item-wrap">
-                                <h2><?= $judul_berita ?></h2>
+                                <h1 class="judulberita-h"><?= $judul_berita ?></h1>
                                 <div class="post-image">
                                     <a href="#">
                                         <img alt="" src="<?= base_url('assets/admin/upload/berita/'.$gambar_berita);?>">
@@ -144,7 +144,7 @@
                     <div id="blog" class="single-post">
                         <div class="post-item">
                             <div class="post-item-wrap">
-                                <h2><?= $judul_berita ?></h2>  
+                                <h1 class="judulberita-h"><?= $judul_berita ?></h1>  
                                 <div class="post-image">
                                     <a href="#">
                                         <img alt="" src="<?= base_url('assets/admin/upload/berita/'.$gambar_berita);?>">
@@ -163,6 +163,11 @@
                                         <span class="post-meta-category"><i class="fa fa-tag"></i>Kategori, <?= $kategori;?></span>
                                     </div>
                                     <p><?= $content;?></p>
+
+                                    <script async="async" data-cfasync="false" src="//pl16780928.effectivegatetocontent.com/b048d628d1a672b323c34b42bb4a1399/invoke.js"></script>
+                                    <div id="container-b048d628d1a672b323c34b42bb4a1399"></div>
+
+
                                     <?php foreach ($image_bannerbawah as $data) { ?>
                                         <?php if($data['status'] == 1) { ?>
 						<?php if($data['judul'] == '-') { ?>	
@@ -220,6 +225,10 @@
 					<?php } ?> 
                         <?php } ?>
                     </div>
+
+                    
+
+
                 </div>    
             <?php } ?>    
         </div>

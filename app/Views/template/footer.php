@@ -3,7 +3,7 @@
 		<div class="container">            
 			<div class="row">                
 				<div class="col-lg-4 col-lg-2 col-md-4">                    
-					<div class="widget widget-contact-us" style="background-image: url('<?= base_url();?>assets/temp/images/world-map-dark.png'); background-position: 50% 20px; background-repeat: no-repeat">                        
+					<div class="widget widget-contact-us" style="background-image: url('<?= base_url();?>/assets/temp/images/world-map-dark.png'); background-position: 50% 20px; background-repeat: no-repeat">                        
 						<h4>INDRA JATIM</h4>                        
 						<ul class="list-icon">                            
 							<li style="text-align:left;"><i class="fa fa-map-marker-alt"></i> Jl. Medokan Asri Barat No.22, Medokan Ayu Kec. Rungkut, Surabaya Jawa Timur 60295</li>                            
